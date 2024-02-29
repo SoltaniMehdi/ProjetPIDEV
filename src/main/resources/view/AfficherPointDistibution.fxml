@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AfficherPointDistributionController">
+    <children>
+        <TableView fx:id="pointDistributionTable" layoutX="31.0" layoutY="26.0" prefHeight="324.0" prefWidth="538.0">
+            <columns>
+                <TableColumn fx:id="idPointDistributionColumn" prefWidth="150.0" text="ID Point Distribution" />
+                <TableColumn fx:id="nomColumn" prefWidth="150.0" text="Nom" />
+                <TableColumn fx:id="adresseColumn" prefWidth="150.0" text="Adresse" />
+                <TableColumn fx:id="idLivraisonColumn" prefWidth="150.0" text="ID Livraison" />
+                <!-- Ajoutez d'autres colonnes si nécessaire pour afficher d'autres propriétés de la classe PointDistribution -->
+            </columns>
+        </TableView>
+        <Button layoutX="200.0" layoutY="355.0" mnemonicParsing="false" onAction="#modifier" text="modifier">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <Button fx:id="supprimerButton" layoutX="320.0" layoutY="355.0" mnemonicParsing="false" onAction="#supprimer" text="Supprimer">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+      <Button fx:id="back" layoutX="444.0" layoutY="355.0" mnemonicParsing="false" onAction="#handleAnnulerButton" text="retour">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+    </children>
+</AnchorPane>
