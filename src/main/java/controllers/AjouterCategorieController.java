@@ -5,6 +5,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+import entities.Categorie;
 import entities.Repas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,11 +15,12 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import services.ServiceRepas;
+import services.ServiceCategorie;
 
-public class AjouterRepasController {
 
-ServiceRepas serviceRepas = new ServiceRepas();
+public class AjouterCategorieController {
+
+ServiceCategorie serviceCategorie = new ServiceCategorie();
     @FXML
     private Button afficher;
 
@@ -26,16 +28,10 @@ ServiceRepas serviceRepas = new ServiceRepas();
     private Button ajout;
 
     @FXML
-    private TextField ajouter_desc;
+    private TextField ajouter_nomcat;
 
     @FXML
-    private TextField ajouter_nom;
-
-    @FXML
-    private TextField ajouter_prix;
-
-    @FXML
-    private TextField ajouter_cat;
+    private TextField ajouter_descat;
     @FXML
     private ImageView img;
 
@@ -47,44 +43,36 @@ ServiceRepas serviceRepas = new ServiceRepas();
         alert.showAndWait();
     }
 
+
     @FXML
     void afficher(ActionEvent event) {
         try {
-            Parent root= FXMLLoader.load(getClass().getResource("/AfficherRepas.fxml"));
-            ajouter_prix.getScene().setRoot(root);
+            Parent root= FXMLLoader.load(getClass().getResource("/AfficherCategorie.fxml"));
+            ajouter_nomcat.getScene().setRoot(root);
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
 
-
-
-
-
     @FXML
     void ajouter(ActionEvent event) {
 
 
-        // Vérifier que tous les champs sont remplis
-        if (ajouter_prix.getText().isEmpty() || ajouter_nom.getText().isEmpty() || ajouter_desc.getText().isEmpty() || ajouter_cat.getText().isEmpty()) {
+        if (ajouter_nomcat.getText().isEmpty() || ajouter_descat.getText().isEmpty()) {
             showAlert("Erreur", "Champs vides", "Veuillez remplir tous les champs.", Alert.AlertType.ERROR);
             return;
         }
         try {
-            serviceRepas.ajouter(new Repas(Float.parseFloat(ajouter_prix.getText()),ajouter_nom.getText(),ajouter_desc.getText(),Integer.parseInt(ajouter_cat.getText())));
+            serviceCategorie.ajouter(new Categorie(ajouter_nomcat.getText(),ajouter_descat.getText()));
 
             // Afficher une alerte de succès
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Succès");
-            alert.setContentText("Repas ajouté avec succès");
+            alert.setContentText("Catégories ajoutée avec succès");
             alert.showAndWait();
-        } catch (NumberFormatException e) {
-            showAlert("Erreur", "Format de prix ou de catégorie invalide", "Veuillez saisir un prix et une catégorie valides.", Alert.AlertType.ERROR);
         } catch (SQLException e) {
             throw new RuntimeException(e.getMessage());
         }
     }
-
-
 
 }

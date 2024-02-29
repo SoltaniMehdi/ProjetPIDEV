@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AjouterRepasController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AjouterCategorieController">
    <!-- Arrière-plan avec des formes -->
    <Rectangle fill="#B3F096" height="600.0" width="800.0" />
    <Rectangle arcHeight="20.0" arcWidth="20.0" fill="white" height="500.0" width="700.0" x="50.0" y="50.0" />
@@ -24,8 +24,7 @@
    <BorderPane layoutX="50.0" layoutY="50.0" prefHeight="500.0" prefWidth="700.0">
       <top>
          <HBox alignment="CENTER" spacing="20.0">
-            <ImageView fitHeight="46.0" fitWidth="181.0" pickOnBounds="true" preserveRatio="true" />
-            <Label prefHeight="35.0" prefWidth="502.0" text="Entrez les informations du repas" textAlignment="CENTER" textFill="black">
+            <Label prefHeight="35.0" prefWidth="407.0" text="Entrez les informations de la catégorie" textAlignment="CENTER" textFill="black">
                <font>
                   <Font size="24.0" />
                </font>
@@ -34,30 +33,18 @@
       </top>
       <center>
          <GridPane vgap="10.0">
-            <Label text="Prix :" textFill="black" GridPane.columnIndex="14" GridPane.rowIndex="3">
+            <Label text="Nom :" textFill="black" GridPane.columnIndex="14" GridPane.rowIndex="8">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="ajouter_prix" GridPane.columnIndex="17" GridPane.rowIndex="3" />
-            <Label prefHeight="59.0" prefWidth="43.0" text="Nom :" textFill="black" GridPane.columnIndex="14" GridPane.rowIndex="8">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <TextField fx:id="ajouter_nom" GridPane.columnIndex="17" GridPane.rowIndex="8" />
+            <TextField fx:id="ajouter_nomcat" GridPane.columnIndex="17" GridPane.rowIndex="8" />
             <Label prefHeight="0.0" prefWidth="105.0" text="Description :" textFill="black" GridPane.columnIndex="14" GridPane.rowIndex="14">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="ajouter_desc" GridPane.columnIndex="17" GridPane.rowIndex="14" />
-            <Label prefHeight="105.0" prefWidth="77.0" text="Catégorie :" textFill="black" GridPane.columnIndex="14" GridPane.rowIndex="17">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <TextField fx:id="ajouter_cat" GridPane.columnIndex="17" GridPane.rowIndex="17" />
+            <TextField fx:id="ajouter_descat" GridPane.columnIndex="17" GridPane.rowIndex="14" />
             <columnConstraints>
                <ColumnConstraints />
                <ColumnConstraints />
@@ -104,6 +91,7 @@
          <HBox alignment="CENTER" prefHeight="48.0" prefWidth="702.0" spacing="20.0">
             <Button fx:id="ajouter" mnemonicParsing="false" onAction="#ajouter" prefHeight="34.0" prefWidth="144.0" text="Ajouter" />
             <Button fx:id="afficher" mnemonicParsing="false" onAction="#afficher" prefHeight="34.0" prefWidth="133.0" text="Afficher" />
+
          </HBox>
       </bottom>
    </BorderPane>
@@ -114,4 +102,5 @@
          <Image url="@logo.png" />
       </image>
    </ImageView>
+
 </AnchorPane>

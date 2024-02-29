@@ -1,5 +1,6 @@
 package services;
 
+import entities.Categorie;
 import entities.Repas;
 import utils.MyDataBase;
 
@@ -25,7 +26,7 @@ public class ServiceRepas implements IService<Repas> {
 
         Statement st = connection.createStatement();
         st.executeUpdate(req);
-        System.out.println("Repas ajouté");
+        System.out.println("Repas ajouté avec succès ");
     }
 
     @Override
@@ -53,7 +54,9 @@ public class ServiceRepas implements IService<Repas> {
     @Override
     public List<Repas> afficher() throws SQLException {
         List<Repas> repasList = new ArrayList<>();
-        String req = "SELECT * FROM repas";
+        String req = "SELECT r.*, c.nom AS categorie_nom, c.description AS categorie_description " +
+                "FROM repas r " +
+                "INNER JOIN categorie c ON r.idC = c.id";
         Statement st = connection.createStatement();
         ResultSet rs = st.executeQuery(req);
         while (rs.next()) {
@@ -61,8 +64,16 @@ public class ServiceRepas implements IService<Repas> {
             repas.setIdR(rs.getInt("idR"));
             repas.setPrix(rs.getFloat("prix"));
             repas.setNom(rs.getString("nom"));
-            repas.setDescription(rs.getString("descripion"));
+            repas.setDescription(rs.getString("description"));
             repas.setIdC(rs.getInt("idC"));
+
+            // Récupérer les détails de la catégorie associée
+            Categorie categorie = new Categorie();
+            categorie.setNom(rs.getString("categorie_nom"));
+            categorie.setDescription(rs.getString("categorie_description"));
+
+            repas.setCategorie(categorie);
+
             repasList.add(repas);
         }
         return repasList;

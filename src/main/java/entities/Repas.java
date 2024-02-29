@@ -7,6 +7,8 @@ public class Repas {
     private String description;
     private int idC;
 
+    private Categorie categorie; // Ajoutez cet attribut
+
     public Repas() {
     }
 
@@ -63,6 +65,14 @@ public class Repas {
 
     public void setIdC(int idC) {
         this.idC = idC;
+    }
+
+    public Categorie getCategorie() {
+        return categorie;
+    }
+
+    public void setCategorie(Categorie categorie) {
+        this.categorie = categorie;
     }
 
     @Override

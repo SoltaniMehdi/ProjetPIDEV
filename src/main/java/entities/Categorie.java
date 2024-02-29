@@ -1,17 +1,28 @@
 package entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Categorie {
     private int id;
     private String nom;
     private String description;
+    private List<Repas> repasList; // Liste des repas associés à cette catégorie
 
     public Categorie() {
+        repasList = new ArrayList<>(); // Initialisation de la liste des repas
     }
 
     public Categorie(int id, String nom, String description) {
         this.id = id;
         this.nom = nom;
         this.description = description;
+        repasList = new ArrayList<>(); // Initialisation de la liste des repas
+    }
+    public Categorie( String nom, String description) {
+        this.nom = nom;
+        this.description = description;
+
     }
 
     public int getId() {
@@ -38,12 +49,15 @@ public class Categorie {
         this.description = description;
     }
 
-    @Override
-    public String toString() {
-        return "Categorie{" +
-                "id=" + id +
-                ", nom='" + nom + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+    // Méthode pour ajouter un repas à la liste des repas de cette catégorie
+    public void addRepas(Repas repas) {
+        repasList.add(repas);
     }
+
+    // Méthode pour récupérer la liste des repas associés à cette catégorie
+    public List<Repas> getRepasList() {
+        return repasList;
+    }
+
+
 }
