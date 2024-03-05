@@ -1,0 +1,7 @@
+controllers\Admincontroller.class
+utils\Encryptor.class
+tests\mainFX.class
+controllers\Inscriptioncontroller.class
+controllers\Logincontroller.class
+controllers\modifiersupprimerclientController.class
+controllers\modifiersupprimeradminController.class
