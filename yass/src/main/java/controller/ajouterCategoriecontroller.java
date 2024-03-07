@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import org.controlsfx.control.Notifications;
 import services.servicecategorie;
 import services.serviceevenement;
 
@@ -49,6 +50,7 @@ public class ajouterCategoriecontroller {
                     tx_categ.getScene().setRoot(root);
                 } catch (IOException e) {
                     System.out.println(e.getMessage());
+
                 }
             }
                 @FXML

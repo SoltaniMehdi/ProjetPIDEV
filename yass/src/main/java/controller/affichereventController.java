@@ -25,7 +25,6 @@ public class affichereventController implements Initializable {
 
     @FXML
     private Button b_modifier;
-
     private ObservableList<evenement> eventList = FXCollections.observableArrayList();
     private serviceevenement se = new serviceevenement();
     @FXML

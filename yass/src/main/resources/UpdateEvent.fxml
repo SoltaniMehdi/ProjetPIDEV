@@ -8,43 +8,45 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateEventController">
+<AnchorPane prefHeight="524.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateEventController">
    <children>
-      <VBox fx:id="chosenFruitCard" alignment="CENTER" layoutX="123.0" layoutY="4.0" prefHeight="428.0" prefWidth="354.0" stylesheets="@values/style.css">
+      <VBox fx:id="chosenFruitCard" alignment="CENTER" layoutX="191.0" layoutY="57.0" prefHeight="428.0" prefWidth="414.0" stylesheets="@values/style.css">
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="334.0">
                <children>
-                  <Label prefHeight="48.0" prefWidth="176.0" text="Nom">
+                  <Label prefHeight="48.0" prefWidth="201.0" text="Nom">
                      <font>
-                        <Font size="24.0" />
+                        <Font name="Cambria Bold Italic" size="24.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="tx_nom" prefHeight="38.0" prefWidth="182.0" />
+                  <TextField fx:id="tx_nom" prefHeight="38.0" prefWidth="174.0" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="464.0">
                <children>
-                  <Label prefHeight="30.0" prefWidth="177.0" text="Date Début ">
+                  <Label prefHeight="30.0" prefWidth="204.0" text="Date Début ">
                      <font>
-                        <Font name="Cambria" size="24.0" />
+                        <Font name="Cambria Bold Italic" size="24.0" />
                      </font>
                   </Label>
-                  <DatePicker fx:id="dt_dd" prefHeight="39.0" prefWidth="179.0" />
+                  <DatePicker fx:id="dt_dd" prefHeight="39.0" prefWidth="177.0" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="82.0" prefWidth="464.0">
                <children>
-                  <Label prefHeight="70.0" prefWidth="171.0" text="Lieu" textFill="#180101">
+                  <Label prefHeight="70.0" prefWidth="201.0" text="Lieu" textFill="#180101">
                      <font>
-                        <Font name="Cambria" size="24.0" />
+                        <Font name="Cambria Bold Italic" size="24.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="cb_lieu" prefHeight="46.0" prefWidth="190.0" promptText="lieu" styleClass="comboBox" stylesheets="@values/style.css">
+                  <ComboBox fx:id="cb_lieu" prefHeight="46.0" prefWidth="184.0" promptText="lieu" styleClass="comboBox" stylesheets="@values/style.css">
                      <items>
                         <FXCollections fx:factory="observableArrayList">
                             <String fx:id="1" fx:value="Tunis " />
@@ -64,24 +66,32 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="72.0" prefWidth="334.0">
                <children>
-                  <Label prefHeight="51.0" prefWidth="183.0" text="Description ">
+                  <Label prefHeight="51.0" prefWidth="202.0" text="Description ">
                      <font>
-                        <Font size="24.0" />
+                        <Font name="Cambria Bold Italic" size="24.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="tf_des" prefHeight="34.0" prefWidth="183.0">
+                  <TextField fx:id="tf_des" prefHeight="38.0" prefWidth="196.0">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </TextField>
                </children>
             </HBox>
-            <Button mnemonicParsing="false" onAction="#OnEditClicked" prefHeight="47.0" prefWidth="92.0" styleClass="add-btn" stylesheets="@values/style.css" text="Modifier" />
+            <Button mnemonicParsing="false" onAction="#OnEditClicked" prefHeight="47.0" prefWidth="156.0" styleClass="add-btn" stylesheets="@values/style.css" text="Modifier">
+               <font>
+                  <Font name="Cambria Bold Italic" size="24.0" />
+               </font></Button>
          </children>
          <styleClass>
             <String fx:value="chosen-fruit-card" />
             <String fx:value="shadow" />
          </styleClass>
       </VBox>
+      <ImageView fitHeight="193.0" fitWidth="184.0" layoutX="-3.0">
+         <image>
+            <Image url="@values/img/logo.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

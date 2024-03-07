@@ -83,8 +83,8 @@ public class evenement {
             return "evenement{" +
                    // "id=" + id +
                     ", nom='" + nom + '\'' +
-                    ", lieu='" + lieu + '\'' +
                     ", description='" + description + '\'' +
+                    ", lieu='" + lieu + '\'' +
                     ", dateD=" + dateD +
                     ", categorie=" + s.findCategById(id_categorie).getCategevent() +
                     '}';

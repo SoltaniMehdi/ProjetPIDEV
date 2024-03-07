@@ -52,7 +52,7 @@ public class Categorie {
     @Override
     public String toString() {
         return "Categprie{" +
-                "idcateg=" + idcateg+
+              //  "idcateg=" + idcateg+
                 ", categevent=" + categevent + '\'' +
                 '}';
     }

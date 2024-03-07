@@ -19,54 +19,34 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ajouterevent">
     <children>
-        <BorderPane layoutX="6.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <BorderPane layoutX="6.0" prefHeight="400.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <left>
-                <VBox prefHeight="200.0" prefWidth="435.0" styleClass="right-bar" stylesheets="@../values/style.css" BorderPane.alignment="CENTER">
+                <VBox prefHeight="300.0" prefWidth="450.0" styleClass="right-bar" stylesheets="@../values/style.css" BorderPane.alignment="CENTER">
                     <children>
-                        <HBox alignment="CENTER" prefHeight="196.0" prefWidth="489.0">
+                        <HBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
                             <children>
-                        <ImageView fitHeight="200.0" fitWidth="218.0">
+                        <ImageView fitHeight="200.0" fitWidth="249.0">
                            <image>
                               <Image url="@../values/img/logo.png" />
                            </image>
                         </ImageView>
-                                <Label prefHeight="50.0" prefWidth="165.0" text="VitaPlat" textFill="#878787">
+                                <Label prefHeight="100.0" prefWidth="226.0" text="VitaPlat" textFill="#e1a557">
                                     <font>
-                                        <Font name="Cambria Bold" size="40.0" />
+                                        <Font name="Cambria Bold Italic" size="40.0" />
                                     </font>
                                 </Label>
                             </children>
                         </HBox>
-                        <HBox alignment="CENTER" prefHeight="65.0" prefWidth="200.0" stylesheets="@../values/style.css" VBox.vgrow="NEVER">
-                            <VBox.margin>
-                                <Insets left="30.0" right="30.0" />
-                            </VBox.margin>
-                            <children>
-                                <TextField prefHeight="39.0" prefWidth="259.0" promptText="écrire ici " styleClass="transparent" stylesheets="@../values/style.css">
-                                    <HBox.margin>
-                                        <Insets left="20.0" />
-                                    </HBox.margin>
-                                    <font>
-                                        <Font name="Cambria" size="18.0" />
-                                    </font>
-                                </TextField>
-                                <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="130.0" styleClass="search-button" stylesheets="@../values/style.css" text="Rechercher " textFill="WHITE" />
-                            </children>
-                            <styleClass>
-                                <String fx:value="search-box" />
-                                <String fx:value="shadow" />
-                            </styleClass>
-                        </HBox>
-                        <Pane prefHeight="534.0" prefWidth="436.0" VBox.vgrow="ALWAYS">
+                        <Pane prefHeight="300.0" prefWidth="379.0" VBox.vgrow="ALWAYS">
                      <children>
-                                <Button fx:id="b_ve" layoutX="63.0" layoutY="47.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#ajouterEvent" onMouseClicked="#ajouter" prefHeight="73.0" prefWidth="309.0" styleClass="add-btn" stylesheets="@../values/style.css" text="Ajouter Event " textFill="#300606">
+                                <Button fx:id="b_ve" layoutX="44.0" layoutY="140.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#ajouterEvent" onMouseClicked="#ajouter" prefHeight="74.0" prefWidth="323.0" styleClass="add-btn" stylesheets="@../values/style.css" text="Ajouter Event " textFill="#300606">
                                     <font>
-                                        <Font size="18.0" />
+                                        <Font name="Cambria Bold Italic" size="30.0" />
                                     </font>
                                 </Button>
-                        <Button fx:id="b_aff" layoutX="61.0" layoutY="167.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#affichage" onMouseClicked="#ajouter" prefHeight="62.0" prefWidth="310.0" styleClass="add-btn" stylesheets="@../values/style.css" text="Afficher Liste" textFill="#300606">
+                        <Button fx:id="b_aff" layoutX="38.0" layoutY="225.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#affichage" onMouseClicked="#ajouter" prefHeight="75.0" prefWidth="333.0" styleClass="add-btn" stylesheets="@../values/style.css" text="Afficher Liste" textFill="#300606">
                            <font>
-                              <Font size="24.0" />
+                              <Font name="Cambria Bold Italic" size="30.0" />
                            </font>
                         </Button>
                      </children></Pane>
@@ -74,7 +54,7 @@
                 </VBox>
             </left>
             <center>
-                <VBox alignment="CENTER_LEFT" prefHeight="799.0" prefWidth="863.0" BorderPane.alignment="CENTER">
+                <VBox alignment="CENTER_LEFT" prefHeight="600.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                     <children>
                         <HBox alignment="CENTER" prefHeight="65.0" prefWidth="200.0">
                             <VBox.margin>
@@ -86,12 +66,12 @@
                                         <Font name="Cambria Bold" size="18.0" />
                                     </font>
                                 </Label>
-                                <Label prefHeight="29.0" prefWidth="77.0" text="Français " textFill="#878787" underline="true">
+                                <Label prefHeight="30.0" prefWidth="116.0" text="Français " textFill="#878787" underline="true">
                                     <font>
                                         <Font name="Cambria" size="18.0" />
                                     </font>
                                 </Label>
-                                <Pane prefHeight="65.0" prefWidth="393.0" HBox.hgrow="ALWAYS" />
+                                <Pane prefHeight="65.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
                                 <Label prefHeight="62.0" prefWidth="100.0" text="MON Compte" textFill="#878787">
                                     <font>
                                         <Font name="Cambria" size="14.0" />
@@ -121,7 +101,7 @@
                                     </children>
                                 </HBox>
                                 <Pane prefHeight="84.0" prefWidth="96.0" HBox.hgrow="ALWAYS" />
-                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="336.0" styleClass="shopping-online-card" stylesheets="@../values/style.css">
+                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="336.0" style="-fx-background-color: D8EFBB;" styleClass="shopping-online-card" stylesheets="@../values/style.css">
                                     <children>
                                         <VBox alignment="CENTER" prefHeight="100.0" prefWidth="203.0">
                                             <children>
@@ -140,17 +120,17 @@
                                 <Insets left="20.0" right="20.0" top="10.0" />
                             </VBox.margin>
                         </HBox>
-                  <VBox prefHeight="123.0" prefWidth="880.0" />
-                        <VBox fx:id="chosenFruitCard" alignment="CENTER" prefHeight="428.0" prefWidth="248.0" stylesheets="@../values/style.css">
+                  <VBox prefHeight="100.0" prefWidth="0.0" />
+                        <VBox fx:id="chosenFruitCard" alignment="CENTER" prefHeight="500.0" prefWidth="250.0" style="-fx-background-color: D8EFBB;" stylesheets="@../values/style.css">
                             <VBox.margin>
                                 <Insets left="50.0" right="50.0" />
                             </VBox.margin>
                             <children>
-                        <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="334.0">
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="500.0">
                            <children>
                               <Label prefHeight="48.0" prefWidth="176.0" text="Nom">
                                  <font>
-                                    <Font size="24.0" />
+                                    <Font name="Cambria Bold Italic" size="30.0" />
                                  </font>
                               </Label>
                               <TextField fx:id="tx_nom" prefHeight="38.0" prefWidth="182.0" />
@@ -160,7 +140,7 @@
                            <children>
                               <Label prefHeight="30.0" prefWidth="177.0" text="Date Début ">
                                  <font>
-                                    <Font name="Cambria" size="24.0" />
+                                    <Font name="Cambria Bold Italic" size="30.0" />
                                  </font>
                               </Label>
                               <DatePicker fx:id="dt_dd" prefHeight="39.0" prefWidth="179.0" />
@@ -170,7 +150,7 @@
                                     <children>
                                         <Label prefHeight="70.0" prefWidth="171.0" text="Lieu" textFill="#180101">
                                             <font>
-                                                <Font name="Cambria" size="24.0" />
+                                                <Font name="Cambria Bold Italic" size="30.0" />
                                             </font>
                                         </Label>
                                         <ComboBox fx:id="cb_lieu" prefHeight="46.0" prefWidth="190.0" promptText="lieu" styleClass="comboBox" stylesheets="@../values/style.css">
@@ -195,7 +175,7 @@
                            <children>
                               <Label prefHeight="51.0" prefWidth="183.0" text="Description ">
                                  <font>
-                                    <Font size="24.0" />
+                                    <Font name="Cambria Bold Italic" size="30.0" />
                                  </font>
                               </Label>
                               <TextField fx:id="tf_des" prefHeight="34.0" prefWidth="183.0">

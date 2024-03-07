@@ -8,37 +8,37 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="479.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.affichercategorie">
+<AnchorPane prefHeight="601.0" prefWidth="853.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.affichercategorie">
    <children>
-      <ListView fx:id="lv_categ" layoutX="243.0" layoutY="124.0" prefHeight="308.0" prefWidth="474.0" />
-      <Pane prefHeight="539.0" prefWidth="232.0">
+      <ListView fx:id="lv_categ" layoutX="274.0" layoutY="148.0" prefHeight="442.0" prefWidth="565.0" />
+      <Pane prefHeight="602.0" prefWidth="262.0" style="-fx-background-image: D8EFBB;">
          <children>
-            <Button fx:id="b_supprimer" layoutX="12.0" layoutY="400.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#OnDeleteClicked" prefHeight="73.0" prefWidth="209.0" styleClass="add-btn" stylesheets="@../../../../../IdeaProjects/WorkShopJDBC/src/main/resources/values/style.css" text="supprimer" textFill="#300606">
+            <Button layoutX="20.0" layoutY="211.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#ajouter_categorie" prefHeight="73.0" prefWidth="222.0" style="-fx-background-color: D8EFBB;" styleClass="add-btn" stylesheets="@values/style.css" text="Ajouter categorie" textFill="#300606">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button fx:id="b_modifier" layoutX="9.0" layoutY="317.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#GoUpdate" prefHeight="73.0" prefWidth="209.0" styleClass="add-btn" stylesheets="@../../../../../IdeaProjects/WorkShopJDBC/src/main/resources/values/style.css" text="modifier" textFill="#300606">
+            <Button layoutX="20.0" layoutY="327.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#ajouter_event" prefHeight="73.0" prefWidth="222.0" style="-fx-background-color: D8EFBB;" styleClass="add-btn" stylesheets="@values/style.css" text="Ajouter event" textFill="#300606">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button layoutX="9.0" layoutY="142.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#ajouter_event" prefHeight="73.0" prefWidth="221.0" styleClass="add-btn" stylesheets="@../../../../../IdeaProjects/WorkShopJDBC/src/main/resources/values/style.css" text="ajouter event" textFill="#300606">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Button>
-            <Button layoutX="3.0" layoutY="233.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#ajouter_categorie" prefHeight="73.0" prefWidth="221.0" styleClass="add-btn" stylesheets="@../../../../../IdeaProjects/WorkShopJDBC/src/main/resources/values/style.css" text="ajouter categorie" textFill="#300606">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Button>
-            <ImageView fitHeight="137.0" fitWidth="243.0" layoutX="-5.0" layoutY="-2.0">
-               <image>
-                  <Image url="@../../../../../IdeaProjects/WorkShopJDBC/src/main/resources/values/img/logo.png" />
-               </image>
-            </ImageView>
          </children>
       </Pane>
+      <Button fx:id="b_modifier" layoutX="301.0" layoutY="48.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#GoUpdate" prefHeight="66.0" prefWidth="210.0" style="-fx-background-color: D8EFBB;" styleClass="add-btn" stylesheets="@values/style.css" text="Modifier" textFill="#300606">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="b_supprimer" layoutX="555.0" layoutY="48.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#OnDeleteClicked" prefHeight="65.0" prefWidth="210.0" style="-fx-background-color: D8EFBB;" styleClass="add-btn" stylesheets="@values/style.css" text="Supprimer" textFill="#300606">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="193.0" fitWidth="200.0" layoutX="11.0" layoutY="8.0">
+         <image>
+            <Image url="@values/img/logo.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

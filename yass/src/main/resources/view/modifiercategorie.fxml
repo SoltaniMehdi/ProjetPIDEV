@@ -4,32 +4,41 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.modifercategorie">
+<AnchorPane prefHeight="454.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.modifercategorie">
    <children>
-      <VBox fx:id="chosenFruitCard" alignment="CENTER" layoutX="139.0" layoutY="82.0" prefHeight="208.0" prefWidth="358.0" stylesheets="@../../../../../../IdeaProjects/WorkShopJDBC/src/main/resources/values/style.css">
+      <VBox fx:id="chosenFruitCard" alignment="CENTER" layoutX="144.0" layoutY="170.0" prefHeight="208.0" prefWidth="450.0" style="-fx-background-color: D89465;" stylesheets="@../values/style.css">
          <children>
-            <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="372.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="370.0">
                <children>
-                  <Label fx:id="l_categ" prefHeight="48.0" prefWidth="195.0" text="Categorie Event ">
+                  <Label fx:id="l_categ" prefHeight="48.0" prefWidth="230.0" text="Categorie Event ">
                      <font>
-                        <Font size="24.0" />
+                        <Font name="Cambria Bold Italic" size="24.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="tx_categ" prefHeight="38.0" prefWidth="160.0" />
+                  <TextField fx:id="tx_categ" prefHeight="38.0" prefWidth="213.0" />
                </children>
             </HBox>
-            <Button mnemonicParsing="false" onAction="#OnEditClicked" prefHeight="47.0" prefWidth="92.0" styleClass="add-btn" stylesheets="@../values/style.css" text="Modifier" />
+            <Button mnemonicParsing="false" onAction="#OnEditClicked" prefHeight="47.0" prefWidth="140.0" styleClass="add-btn" stylesheets="@../values/style.css" text="Modifier">
+               <font>
+                  <Font name="Cambria Bold Italic" size="18.0" />
+               </font></Button>
          </children>
          <styleClass>
             <String fx:value="chosen-fruit-card" />
             <String fx:value="shadow" />
          </styleClass>
       </VBox>
+      <ImageView fitHeight="185.0" fitWidth="160.0">
+         <image>
+            <Image url="@../values/img/logo.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

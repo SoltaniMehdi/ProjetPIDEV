@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 
 import entities.evenement;
 import javafx.fxml.Initializable;
+import org.controlsfx.control.Notifications;
 import tests.mainFx;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -102,10 +103,13 @@ public class ajouterevent implements Initializable {
         } catch (Exception e) {
             // Handle other exceptions if needed
             e.printStackTrace();
+
+
         }
 
 
     }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

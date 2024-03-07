@@ -12,10 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="494.0" prefWidth="708.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ajouterCategoriecontroller">
    <children>
-      <VBox fx:id="chosenFruitCard" alignment="CENTER" layoutX="296.0" layoutY="189.0" prefHeight="144.0" prefWidth="358.0" stylesheets="@../../../../../../IdeaProjects/WorkShopJDBC/src/main/resources/values/style.css">
+      <VBox fx:id="chosenFruitCard" alignment="CENTER" layoutX="296.0" layoutY="189.0" prefHeight="144.0" prefWidth="358.0" stylesheets="@../values/style.css">
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="372.0">
                <children>
@@ -35,19 +34,19 @@
       </VBox>
       <Pane prefHeight="539.0" prefWidth="277.0">
          <children>
-            <Button fx:id="b_ac" layoutX="10.0" layoutY="171.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#ajoutercategorie" onMouseClicked="#ajouter" prefHeight="73.0" prefWidth="244.0" styleClass="add-btn" stylesheets="@../../../../../../IdeaProjects/WorkShopJDBC/src/main/resources/values/style.css" text="Ajouter Categorie " textFill="#300606">
+            <Button fx:id="b_ac" layoutX="10.0" layoutY="171.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#ajoutercategorie" onMouseClicked="#ajouter" prefHeight="73.0" prefWidth="244.0" styleClass="add-btn" stylesheets="@../values/style.css" text="Ajouter Categorie " textFill="#300606">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button fx:id="b_affiher" layoutX="9.0" layoutY="299.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#affichage" onMouseClicked="#ajouter" prefHeight="73.0" prefWidth="244.0" styleClass="add-btn" stylesheets="@../../../../../../IdeaProjects/WorkShopJDBC/src/main/resources/values/style.css" text="Afficher " textFill="#300606">
+            <Button fx:id="b_affiher" layoutX="9.0" layoutY="299.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#affichage" onMouseClicked="#ajouter" prefHeight="73.0" prefWidth="244.0" styleClass="add-btn" stylesheets="@../values/style.css" text="Afficher " textFill="#300606">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <ImageView fitHeight="164.0" fitWidth="179.0">
+            <ImageView fitHeight="200.0" fitWidth="218.0" layoutX="22.0" layoutY="-21.0">
                <image>
-                  <Image url="@../../../../../../IdeaProjects/WorkShopJDBC/src/main/resources/values/img/logo.png" />
+                  <Image url="@../values/img/logo.png" />
                </image>
             </ImageView>
          </children>
