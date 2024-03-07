@@ -1,33 +1,34 @@
 package utils;
 
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class MyDatabase {
 
-    final String URL="jdbc:mysql://localhost:3306/gestion_commandes";
-    final String USERNAME="root";
-    final String PASSWORD="";
-   static MyDatabase instance;
-    Connection connection;
-    private MyDatabase(){
-        try {
-            connection= DriverManager.getConnection(URL,USERNAME,PASSWORD);
-            System.out.println("Connexion etablie");
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
+    private static MyDatabase instance;
+    private final HikariDataSource dataSource;
+
+    private MyDatabase() {
+        HikariConfig config = new HikariConfig();
+        config.setJdbcUrl("jdbc:mysql://localhost:3306/gestion_commandes");
+        config.setUsername("root");
+        config.setPassword("");
+        config.setMaximumPoolSize(10); // Adjust the pool size as needed
+
+        dataSource = new HikariDataSource(config);
     }
-    public  static MyDatabase getInstance(){
-        if(instance==null){
-            instance= new MyDatabase();
+
+    public static MyDatabase getInstance() {
+        if (instance == null) {
+            instance = new MyDatabase();
         }
         return instance;
-
     }
 
-    public Connection getConnection() {
-        return connection;
+    public Connection getConnection() throws SQLException {
+        return dataSource.getConnection();
     }
 }

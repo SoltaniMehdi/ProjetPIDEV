@@ -11,7 +11,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class Main {
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) throws ParseException, SQLException {
         ServiceCommandes serviceCommandes= new ServiceCommandes();
         DateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
         java.util.Date datecmd1 = formatter.parse("2014/04/13");

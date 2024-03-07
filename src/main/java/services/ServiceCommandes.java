@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ServiceCommandes implements  IService<Commande>{
     static Connection connection;
-    public ServiceCommandes(){
+    public ServiceCommandes() throws SQLException {
         connection= MyDatabase.getInstance().getConnection();
 
     }
@@ -104,6 +104,43 @@ public class ServiceCommandes implements  IService<Commande>{
                 repas.add(r);
             }
         return repas;
+    }
+
+    public Commande getById(int id) throws SQLException {
+        String req = "SELECT * FROM commandes WHERE id_commande=?";
+        try (PreparedStatement ps = connection.prepareStatement(req)) {
+            ps.setInt(1, id);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    Commande commande = new Commande();
+                    commande.setId_commande(rs.getInt(1));
+                    commande.setDatec(rs.getDate(2));
+                    commande.setStatut(rs.getString(3));
+                    commande.setTotalprix(rs.getInt(4));
+                    return commande;
+                }
+            }
+        }
+        return null; // If no Commande with the given ID is found
+    }
+
+    public List<Commande> getByStatut(String statut) throws SQLException {
+        List<Commande> commandes = new ArrayList<>();
+        String req = "SELECT * FROM commandes WHERE statut=?";
+        try (PreparedStatement ps = connection.prepareStatement(req)) {
+            ps.setString(1, statut);
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    Commande commande = new Commande();
+                    commande.setId_commande(rs.getInt(1));
+                    commande.setDatec(rs.getDate(2));
+                    commande.setStatut(rs.getString(3));
+                    commande.setTotalprix(rs.getInt(4));
+                    commandes.add(commande);
+                }
+            }
+        }
+        return commandes;
     }
 
 

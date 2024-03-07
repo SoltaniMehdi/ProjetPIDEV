@@ -1,8 +1,5 @@
 package entities;
 
-import java.time.LocalDate;
-import java.util.Date;
-
 public class Avis {
     private int id_avis ;
     private int idR;
@@ -48,8 +45,8 @@ public class Avis {
         this.commentaire = commentaire;
     }
 
-    public float getNote() {
-        return note;
+    public int getNote() {
+        return (int) note;
     }
 
     public void setNote(float note) {
@@ -65,5 +62,7 @@ public class Avis {
                 ", note=" + note +
                 '}';
     }
+
 }
+
 

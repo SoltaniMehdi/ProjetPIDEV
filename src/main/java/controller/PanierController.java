@@ -26,6 +26,9 @@ public class PanierController {
     private Button afficherpanier;
     @FXML
     private Button pageprec;
+    @FXML
+    private Button affichertout;
+
 
 
     @FXML

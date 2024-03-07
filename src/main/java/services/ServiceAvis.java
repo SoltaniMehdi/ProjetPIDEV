@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ServiceAvis implements  IService<Avis>{
     Connection connection;
-    public ServiceAvis(){
+    public ServiceAvis() throws SQLException {
         connection= MyDatabase.getInstance().getConnection();
 
     }

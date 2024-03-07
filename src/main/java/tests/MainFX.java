@@ -21,7 +21,7 @@ public class MainFX extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("/view/commande.fxml"));
+        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("/view/Authentification.fxml"));
         try {
             Parent root=fxmlLoader.load();
             Scene scene= new Scene(root);

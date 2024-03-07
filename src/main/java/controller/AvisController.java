@@ -27,6 +27,8 @@ public class AvisController {
     private Button afficheravis;
     @FXML
     private Button pageprec;
+    @FXML
+    private Button stats;
 
     @FXML
     private ListView<Avis> LV_avis;
@@ -44,6 +46,16 @@ public class AvisController {
         try {
             Parent root= FXMLLoader.load(getClass().getResource("/view/AfficherCommande.fxml"));
             pageprec.getScene().setRoot(root);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @FXML
+    void afficherstats (ActionEvent event) {
+        try {
+            Parent root= FXMLLoader.load(getClass().getResource("/view/Stats.fxml"));
+            stats.getScene().setRoot(root);
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }

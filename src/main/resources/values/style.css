@@ -3,8 +3,17 @@
     -fx-background-radius: 100;
 }
 
-.transparent{
+.transparent {
     -fx-background-color: rgba(0,0,0,0);
+}
+
+/* Add these styles for the TextField and PasswordField */
+#un {
+    -fx-background-color: #B9E1A8; /* Set the desired background color */
+}
+
+#pw {
+    -fx-background-color: #B9E1A8; /* Set the desired background color */
 }
 
 .search-button{
@@ -79,4 +88,8 @@
 #delete_bar, #upatedprix {
     -fx-background-color: #FFFFFF;
     -fx-background-radius: 30;
+}
+
+.custom-anchorpane {
+    -fx-background-color: #FFC59C;
 }
