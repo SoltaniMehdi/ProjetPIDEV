@@ -6,28 +6,33 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AfficherPointDistributionController">
+<AnchorPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #8df66e;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AfficherPointDistributionController">
     <children>
-        <TableView fx:id="pointDistributionTable" layoutX="31.0" layoutY="26.0" prefHeight="324.0" prefWidth="538.0">
+        <TableView fx:id="pointDistributionTable" layoutX="48.0" layoutY="24.0" prefHeight="324.0" prefWidth="302.0">
             <columns>
-                <TableColumn fx:id="idPointDistributionColumn" prefWidth="150.0" text="ID Point Distribution" />
-                <TableColumn fx:id="nomColumn" prefWidth="150.0" text="Nom" />
-                <TableColumn fx:id="adresseColumn" prefWidth="150.0" text="Adresse" />
-                <TableColumn fx:id="idLivraisonColumn" prefWidth="150.0" text="ID Livraison" />
+                <TableColumn fx:id="idPointDistributionColumn" editable="false" prefWidth="150.0" sortable="false" text="ID Point Distribution" visible="false" />
+                <TableColumn fx:id="nomColumn" prefWidth="143.199951171875" text="Nom" />
+                <TableColumn fx:id="adresseColumn" minWidth="0.0" prefWidth="158.40008544921875" text="Adresse" />
+                <TableColumn fx:id="idLivraisonColumn" editable="false" prefWidth="150.0" sortable="false" text="ID Livraison" visible="false" />
                 <!-- Ajoutez d'autres colonnes si nécessaire pour afficher d'autres propriétés de la classe PointDistribution -->
             </columns>
         </TableView>
-        <Button layoutX="200.0" layoutY="355.0" mnemonicParsing="false" onAction="#modifier" text="modifier">
+        <Button layoutX="437.0" layoutY="68.0" mnemonicParsing="false" onAction="#modifier" text="modifier">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Button fx:id="supprimerButton" layoutX="320.0" layoutY="355.0" mnemonicParsing="false" onAction="#supprimer" text="Supprimer">
+        <Button fx:id="supprimerButton" layoutX="431.0" layoutY="170.0" mnemonicParsing="false" onAction="#supprimer" text="Supprimer">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-      <Button fx:id="back" layoutX="444.0" layoutY="355.0" mnemonicParsing="false" onAction="#handleAnnulerButton" text="retour">
+      <Button fx:id="back" layoutX="444.0" layoutY="264.0" mnemonicParsing="false" onAction="#handleAnnulerButton" text="retour">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="437.0" layoutY="121.0" mnemonicParsing="false" onAction="#Trie" text="tri par nom">
          <font>
             <Font size="14.0" />
          </font>

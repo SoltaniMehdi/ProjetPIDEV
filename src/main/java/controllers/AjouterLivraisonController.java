@@ -3,9 +3,12 @@ package controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 import services.IService;
 import entities.Livraison1;
 import services.ServiceLivraison;
@@ -26,6 +29,8 @@ public class AjouterLivraisonController {
 
     @FXML
     private Button ajouterButton;
+    @FXML
+    private Button back;
 
     private IService<Livraison1> serviceLivraison;
 
@@ -43,12 +48,14 @@ public class AjouterLivraisonController {
         }
     }
     @FXML
-    void addp(ActionEvent event) {
+    public void handleAnnulerButton() {
         try {
-            Parent root= FXMLLoader.load(getClass().getResource("/view/AjouterPointDistribution.fxml"));
-            tf_adresse.getScene().setRoot(root);
+            Parent root = FXMLLoader.load(getClass().getResource("/Acceuil.fxml"));
+            Scene scene = back.getScene();
+            scene.setRoot(root);
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
+            showAlert("Erreur", "Erreur lors du retour à l'interface précédente", e.getMessage(), Alert.AlertType.ERROR);
         }
     }
     @FXML
@@ -63,18 +70,26 @@ public class AjouterLivraisonController {
             return;
         }
 
-        // Vérifier que le numéro de téléphone est valide
+        // Vérifier que le prix est valide
         if (!isFloat(tf_prix.getText())) {
-            showAlert("Erreur", "Numéro de téléphone invalide", "Veuillez saisir un numéro de téléphone valide.", Alert.AlertType.ERROR);
+            showAlert("Erreur", "prix invalide", "Veuillez saisir un numéro de téléphone valide.", Alert.AlertType.ERROR);
             return;
         }
 
         try {
             serviceLivraison.ajouter(new Livraison1(id,idc,date,adrC, prix));
+            boolean  oeuvreAdded = true;
 
+            if (oeuvreAdded) {
+                Notifications.create()
+                        .title("Notification Title")
+                        .text("livraison AJOUTEE")
+                        .hideAfter(Duration.seconds(9))
+                        .showInformation();
+            }
             Alert alert =new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("succes");
-            alert.setContentText("personne ajoute");
+            alert.setContentText("livraison ajoute");
             alert.showAndWait(); }
         catch (SQLException e) {
             throw new RuntimeException(e.getMessage());

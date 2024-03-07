@@ -50,7 +50,7 @@ private  ServicePointDistribution servicePointDistribution;
     @FXML
     public void handleModifierButton() {
         if (servicePointDistribution == null) {
-            showAlert("Erreur", "Serviceterrain non initialisé", "Le serviceTerrain n'est pas initialisé.", Alert.AlertType.ERROR);
+            showAlert("Erreur", " non initialisé", "Le service n'est pas initialisé.", Alert.AlertType.ERROR);
             return;
         }
 

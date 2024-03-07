@@ -6,17 +6,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ModifierLivraisonController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #8df66e;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ModifierLivraisonController">
     <children>
         <!-- Titre "Modifier Livraison" avec une écriture en gras et couleur verte menthe -->
-        <Label layoutX="178.0" layoutY="14.0" text="Modifier Livraison" textFill="#98FF98"> <!-- Couleur verte menthe -->
+        <Label layoutX="178.0" layoutY="14.0" text="Modifier Livraison" textFill="#1c1e1c"> <!-- Couleur verte menthe -->
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>
         </Label>
 
         <!-- Champ "ID Livraison" -->
-        <Label fx:id="ft_idLivraison" layoutX="50.0" layoutY="80.0" text="ID Livraison :" textFill="#98FF98"> <!-- Couleur verte menthe -->
+        <Label fx:id="ft_idLivraison" layoutX="50.0" layoutY="80.0" text="ID Livraison :" textFill="#1f201f"> <!-- Couleur verte menthe -->
             <font>
                 <Font name="System Bold" size="16.0" />
             </font>
@@ -24,7 +24,7 @@
         <TextField fx:id="idLivraisonTextField" layoutX="178.0" layoutY="80.0" promptText="Entrez l'ID de la livraison" />
 
         <!-- Champ "Adresse" -->
-        <Label fx:id="ft_adresse" layoutX="50.0" layoutY="130.0" text="Adresse :" textFill="#98FF98"> <!-- Couleur verte menthe -->
+        <Label fx:id="ft_adresse" layoutX="50.0" layoutY="130.0" text="Adresse :" textFill="#1c1e1c"> <!-- Couleur verte menthe -->
             <font>
                 <Font name="System Bold" size="16.0" />
             </font>
@@ -32,7 +32,7 @@
         <TextField fx:id="adresseTextField" layoutX="150.0" layoutY="125.0" promptText="Entrez l'adresse" />
 
         <!-- Champ "Date de livraison" -->
-        <Label fx:id="ft_DateLivraison" layoutX="50.0" layoutY="180.0" text="Date de Livraison :" textFill="#98FF98"> <!-- Couleur verte menthe -->
+        <Label fx:id="ft_DateLivraison" layoutX="50.0" layoutY="180.0" text="Date de Livraison :" textFill="#262826"> <!-- Couleur verte menthe -->
             <font>
                 <Font name="System Bold" size="16.0" />
             </font>
@@ -40,7 +40,7 @@
         <TextField fx:id="dateLivraisonTextField" layoutX="200.0" layoutY="175.0" promptText="Entrez la date de livraison" />
 
         <!-- Champ "Prix" -->
-        <Label fx:id="ft_prix" layoutX="50.0" layoutY="230.0" text="Prix :" textFill="#98FF98"> <!-- Couleur verte menthe -->
+        <Label fx:id="ft_prix" layoutX="50.0" layoutY="230.0" text="Prix :" textFill="#141514"> <!-- Couleur verte menthe -->
             <font>
                 <Font name="System Bold" size="16.0" />
             </font>

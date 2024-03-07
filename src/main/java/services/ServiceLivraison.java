@@ -3,10 +3,7 @@ package services;
 import entities.Livraison1;
 import utils.MyDataBase;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,4 +79,6 @@ public class ServiceLivraison implements IService<Livraison1> {
     public List<Livraison1> liste() {
         return null;
     }
+
+
 }

@@ -74,10 +74,11 @@ public class AddPController {
             System.out.println(e.getMessage());
         }
     }
+
     @FXML
     public void handleAnnulerButton() {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/AjouterLivraison.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/Acceuil.fxml"));
             Scene scene = back.getScene();
             scene.setRoot(root);
         } catch (IOException e) {

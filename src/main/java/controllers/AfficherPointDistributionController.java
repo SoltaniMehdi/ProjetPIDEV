@@ -18,7 +18,9 @@ import services.ServicePointDistribution;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class AfficherPointDistributionController {
 ServicePointDistribution servicePointDistribution = new ServicePointDistribution();
@@ -40,7 +42,26 @@ ServicePointDistribution servicePointDistribution = new ServicePointDistribution
     private Button back;
 
 
+    public List<PointDistribution> triEmail() throws SQLException {
 
+        List<PointDistribution> list1 = new ArrayList<>();
+        List<PointDistribution> list2 = servicePointDistribution.afficher();
+
+        list1 = list2.stream().sorted((o1, o2) -> o1.getNom().compareTo(o2.getNom())).collect(Collectors.toList());
+        return list1;
+
+    }
+    @FXML
+    private void Trie() throws SQLException {
+        ServicePointDistribution servicePointDistribution1 = new ServicePointDistribution();
+        PointDistribution pointDistribution = new PointDistribution();
+        List<PointDistribution> a = triEmail();
+        nomColumn.setCellValueFactory(new PropertyValueFactory<>("nom"));
+        adresseColumn.setCellValueFactory(new PropertyValueFactory<>("adresse"));
+
+        pointDistributionTable.getItems().setAll(a);
+
+    }
     @FXML
     void supprimer(ActionEvent event) {
         PointDistribution pointDistribution = pointDistributionTable.getSelectionModel().getSelectedItem();

@@ -8,17 +8,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="519.0" prefWidth="866.0" stylesheets="@/values/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AjouterLivraisonController">
+<AnchorPane prefHeight="519.0" prefWidth="866.0" style="-fx-background-color: #8df66e; -fx-background-color: ;" stylesheets="@/values/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AjouterLivraisonController">
     <children>
         <!-- Titre "Ajouter Livraison" avec une écriture en gras et couleur verte menthe -->
-        <Label layoutX="178.0" layoutY="14.0" text="Ajouter Livraison" textFill="#98FF98"> <!-- Couleur verte menthe -->
+        <Label layoutX="252.0" layoutY="30.0" text="Ajouter Livraison" textFill="#202620"> <!-- Couleur verte menthe -->
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>
         </Label>
 
         <!-- Champ "Adresse" -->
-        <Label fx:id="ft_adresse" layoutX="50.0" layoutY="130.0" text="Adresse :" textFill="#98FF98"> <!-- Couleur verte menthe -->
+        <Label fx:id="ft_adresse" layoutX="50.0" layoutY="130.0" text="Adresse :" textFill="#201c1c"> <!-- Couleur verte menthe -->
             <font>
                 <Font name="System Bold" size="16.0" />
             </font>
@@ -26,7 +26,7 @@
         <TextField fx:id="tf_adresse" layoutX="150.0" layoutY="125.0" promptText="Entrez l'adresse" />
 
         <!-- Champ "Date de livraison" -->
-        <Label fx:id="tf_DateLivraison" layoutX="48.0" layoutY="193.0" text="Date de Livraison :" textFill="#98FF98"> <!-- Couleur verte menthe -->
+        <Label fx:id="tf_DateLivraison" layoutX="48.0" layoutY="193.0" text="Date de Livraison :" textFill="#1a1b1a"> <!-- Couleur verte menthe -->
             <font>
                 <Font name="System Bold" size="16.0" />
             </font>
@@ -34,7 +34,7 @@
         <TextField fx:id="tf_DateDeLivraison" layoutX="199.0" layoutY="193.0" promptText="Entrez la date de livraison" />
 
         <!-- Champ "Prix" -->
-        <Label fx:id="ft_prix" layoutX="79.0" layoutY="250.0" text="Prix :" textFill="#98FF98"> <!-- Couleur verte menthe -->
+        <Label fx:id="ft_prix" layoutX="79.0" layoutY="250.0" text="Prix :" textFill="#1d1e1d"> <!-- Couleur verte menthe -->
             <font>
                 <Font name="System Bold" size="16.0" />
             </font>
@@ -42,17 +42,12 @@
         <TextField fx:id="tf_prix" layoutX="171.0" layoutY="250.0" promptText="Entrez le prix" />
 
         <!-- Bouton "Ajouter" -->
-        <Button layoutX="246.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleAjouterButton" text="Ajouter">
+        <Button layoutX="483.0" layoutY="187.0" mnemonicParsing="false" onAction="#handleAjouterButton" text="Ajouter">
             <font>
                 <Font name="System Bold" size="16.0" />
             </font>
         </Button>
-      <Button layoutX="408.0" layoutY="352.0" mnemonicParsing="false" onAction="#afficher" text="afficher">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Button>
-      <Button layoutX="408.0" layoutY="13.0" mnemonicParsing="false" onAction="#addp" prefHeight="37.0" prefWidth="302.0" text="ajouter une point de distrubtion">
+      <Button layoutX="482.0" layoutY="119.0" mnemonicParsing="false" onAction="#afficher" text="afficher">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -62,6 +57,11 @@
             <Image url="@426322437_1098109651217390_3987298128473541463_n.png" />
          </image>
       </ImageView>
+      <Button fx:id="back" layoutX="482.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleAnnulerButton" prefHeight="30.0" prefWidth="78.0" text="retour">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
       
 
     </children>

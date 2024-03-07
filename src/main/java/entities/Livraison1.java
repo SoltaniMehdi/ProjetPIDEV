@@ -1,5 +1,5 @@
 package entities;
-
+import java.util.Date;
 public class Livraison1 {
     private  int id_livraison; // Déclaré comme final car il est défini une fois dans le constructeur
     private  int id_commande;

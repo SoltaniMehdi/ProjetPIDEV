@@ -1,11 +1,11 @@
 package controllers;
-
+import  java.sql.Connection;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import java.io.IOException;
-
+import javafx.scene.control.TextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -18,9 +18,19 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import entities.Livraison1;
 import javafx.scene.control.cell.PropertyValueFactory;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import services.ServiceLivraison;
+import utils.MyDataBase;
 public class AfficherLivraisonController {
-ServiceLivraison serviceLivraison = new ServiceLivraison();
+    private MyDataBase myDatabase = MyDataBase.getInstance();
+
+    ServiceLivraison serviceLivraison = new ServiceLivraison();
     @FXML
     private TableView<Livraison1> livraisonTable;
 
@@ -45,10 +55,19 @@ ServiceLivraison serviceLivraison = new ServiceLivraison();
     private Button back;
     @FXML
     private Button supprimerButton;
-
+    @FXML
+    private TextField searchField;
     //private IService<Livraison1> serviceLivraison;
 
-
+    @FXML
+    void afficherT(ActionEvent event) {
+        try {
+            Parent root= FXMLLoader.load(getClass().getResource("/Stat.fxml"));
+            back.getScene().setRoot(root);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
     @FXML
     void supprimer(ActionEvent event) {
         Livraison1 livraison1 = livraisonTable.getSelectionModel().getSelectedItem();
@@ -136,5 +155,56 @@ ServiceLivraison serviceLivraison = new ServiceLivraison();
         alert.setContentText(contentText);
         alert.showAndWait();
     }
+
+    @FXML
+    void search()  {
+        String keyword = searchField.getText().toLowerCase();
+ObservableList<Livraison1> filteredList = FXCollections.observableArrayList();
+        // Si le champ de recherche est vide, rétablissez la liste complète
+        if (keyword.isEmpty()) {
+            try {
+                livraisonTable.setItems(FXCollections.observableList(serviceLivraison.afficher()));
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            return;
+        }
+
+        //Filtrer la liste selon le mot-clé de recherche
+        for (Livraison1 livraison1 : livraisonTable.getItems()) {
+            String prixStr = String.valueOf(livraison1.getPrix());
+            if (livraison1.getDate_livraison().toLowerCase().contains(keyword) ||
+                    prixStr.toLowerCase().contains(keyword) || livraison1.getAdresse().toLowerCase().contains(keyword)) {
+                filteredList.add(livraison1);
+            }
+        }
+        livraisonTable.setItems(filteredList);
+    }
+
+    @FXML
+    private void pdf_user(ActionEvent event) {
+        System.out.println("hello");
+        try{
+
+            JasperDesign jDesign = JRXmlLoader.load("C:\\VitaPlat\\src\\main\\resources\\report.jrxml");
+
+            JasperReport jReport = JasperCompileManager.compileReport(jDesign);
+            Connection connection = myDatabase.getConnection();
+            JasperPrint jPrint = JasperFillManager.fillReport(jReport, null, connection);
+
+            JasperViewer viewer = new JasperViewer(jPrint, false);
+
+            viewer.setTitle("Liste des Utilistaeurs");
+            viewer.show();
+            System.out.println("hello");
+
+
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+
+
 
 }
