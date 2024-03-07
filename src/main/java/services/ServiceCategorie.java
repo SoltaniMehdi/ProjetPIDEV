@@ -42,9 +42,7 @@ public class ServiceCategorie implements IService<Categorie> {
     @Override
     public List<Categorie> afficher() throws SQLException {
         List<Categorie> categories = new ArrayList<>();
-        String req = "SELECT c.*, r.idR AS repas_id, r.prix AS repas_prix, r.nom AS repas_nom, r.description AS repas_description " +
-                "FROM categorie c " +
-                "INNER JOIN repas r ON c.id = r.idC";
+        String req = "SELECT * FROM `categorie`";
         Statement st = connection.createStatement();
         ResultSet rs = st.executeQuery(req);
         while (rs.next()) {
@@ -52,16 +50,6 @@ public class ServiceCategorie implements IService<Categorie> {
             categorie.setId(rs.getInt("id"));
             categorie.setNom(rs.getString("nom"));
             categorie.setDescription(rs.getString("description"));
-
-            // Récupérer les détails des repas associés à cette catégorie
-            Repas repas = new Repas();
-            repas.setIdR(rs.getInt("repas_id"));
-            repas.setPrix(rs.getFloat("repas_prix"));
-            repas.setNom(rs.getString("repas_nom"));
-            repas.setDescription(rs.getString("repas_description"));
-
-            categorie.addRepas(repas);
-
             categories.add(categorie);
         }
         return categories;

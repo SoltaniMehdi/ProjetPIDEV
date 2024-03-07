@@ -58,6 +58,14 @@ public class Categorie {
     public List<Repas> getRepasList() {
         return repasList;
     }
+    @Override
+    public String toString() {
+        return "Categorie{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 
 
 }
