@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.modifiersupprimeradminController">
+   <children>
+      <!-- Nom Label -->
+      <Label layoutX="158.0" layoutY="71.0" style="-fx-font-size: 14px; -fx-text-fill: #333;" text="Nom" />
+
+      <!-- Prenom Label -->
+      <Label layoutX="152.0" layoutY="116.0" style="-fx-font-size: 14px; -fx-text-fill: #333;" text="Prenom" />
+
+      <!-- Numero Label -->
+      <Label layoutX="151.0" layoutY="162.0" style="-fx-font-size: 14px; -fx-text-fill: #333;" text="Numero" />
+
+      <!-- Mail Label -->
+      <Label layoutX="161.0" layoutY="205.0" style="-fx-font-size: 14px; -fx-text-fill: #333;" text="Mail" />
+
+      <!-- Password Label -->
+      <Label layoutX="148.0" layoutY="246.0" style="-fx-font-size: 14px; -fx-text-fill: #333;" text="Password" />
+
+      <!-- Role Label -->
+      <Label layoutX="159.0" layoutY="286.0" style="-fx-font-size: 14px; -fx-text-fill: #333;" text="Role" />
+
+      <!-- TextField for Nom -->
+      <TextField fx:id="modsuppadmin_nom" layoutX="277.0" layoutY="67.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: #ccc; -fx-border-radius: 5px;" />
+
+      <!-- TextField for Prenom -->
+      <TextField fx:id="modsuppadmin_prenom" layoutX="277.0" layoutY="112.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: #ccc; -fx-border-radius: 5px;" />
+
+      <!-- TextField for Numero -->
+      <TextField fx:id="modsuppadmin_numero" layoutX="277.0" layoutY="158.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: #ccc; -fx-border-radius: 5px;" />
+
+      <!-- TextField for Mail -->
+      <TextField fx:id="modsuppadmin_mail" layoutX="277.0" layoutY="201.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: #ccc; -fx-border-radius: 5px;" />
+
+      <!-- TextField for Password -->
+      <TextField fx:id="modsuppadmin_password" layoutX="277.0" layoutY="242.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: #ccc; -fx-border-radius: 5px;" />
+
+      <!-- TextField for Role -->
+      <TextField fx:id="modsuppadmin_role" layoutX="278.0" layoutY="282.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: #ccc; -fx-border-radius: 5px;" />
+
+      <!-- Modifier Button -->
+      <Button layoutX="494.0" layoutY="196.0" mnemonicParsing="false" onAction="#modsuppadmin_modifier" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;" text="Modifier" />
+      <Button layoutX="27.0" layoutY="25.0" mnemonicParsing="false" onAction="#retourAcceuil" text="Retour" />
+   </children>
+</AnchorPane>

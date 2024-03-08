@@ -1,0 +1,95 @@
+.search-box{
+    -fx-background-color:#FFFFFF;
+    -fx-background-radius: 100;
+}
+
+.transparent {
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+/* Add these styles for the TextField and PasswordField */
+#un {
+    -fx-background-color: #B9E1A8; /* Set the desired background color */
+}
+
+#pw {
+    -fx-background-color: #B9E1A8; /* Set the desired background color */
+}
+
+.search-button{
+    -fx-background-color: #828282;
+    -fx-background-radius: 30;
+}
+
+.right-bar{
+    -fx-background-color: #D3D3D3;
+}
+
+.shadow{
+    -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.1), 10.0 , 0.0 , 0.0 ,10.0);
+}
+
+.chosen-fruit-card{
+    -fx-background-color: #F16C31;
+    -fx-background-radius: 30;
+}
+
+.comboBox {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 30;
+}
+
+.add-btn{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 100;
+}
+
+.free-delivery-card{
+    -fx-background-color: #D3D3D3;
+    -fx-background-radius: 30;
+}
+
+.shopping-online-card{
+    -fx-background-color: #BAEAC3;
+    -fx-background-radius: 30;
+}
+
+.fruit-item{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 30;
+}
+
+.list-view {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #000000;
+    -fx-border-width: 2px;
+    -fx-font-family: Arial;
+    -fx-font-size: 14px;
+}
+
+
+.heading-label {
+    -fx-font-family: "Arial";
+    -fx-font-size: 48px;
+    -fx-text-fill: #333333;
+}
+
+.custom-button {
+    -fx-background-color: #ADE48B;
+    -fx-background-radius: 30;
+    -fx-text-fill: #333333; /* Set the text color */
+    -fx-font-size: 12.0;
+    -fx-font-weight: bold;
+}
+
+#myHBox {
+    -fx-background-color: #D79363;
+}
+#delete_bar, #upatedprix {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 30;
+}
+
+.custom-anchorpane {
+    -fx-background-color: #FFC59C;
+}

@@ -1,0 +1,29 @@
+.root {
+    -fx-background-color: #B3F096; /* Couleur de fond pour l'arrière-plan */
+}
+
+.text-area {
+    -fx-background-color: white; /* Couleur de fond pour les champs de texte */
+    -fx-font-family: Arial; /* Police de caractères */
+}
+
+.button {
+    -fx-background-color: #4CAF50; /* Couleur de fond pour les boutons */
+    -fx-text-fill: white; /* Couleur du texte */
+    -fx-font-family: Arial; /* Police de caractères */
+}
+
+.label {
+    -fx-text-fill: white; /* Couleur du texte pour les labels */
+    -fx-font-family: Arial; /* Police de caractères */
+}
+
+.text {
+    -fx-fill: white; /* Couleur du texte pour les textes */
+    -fx-font-family: 'Gill Sans MT Condensed'; /* Police de caractères */
+}
+
+.gradient-background {
+    -fx-background-color:
+            linear-gradient(from 0% 0% to 100% 100%, #98FB98, #B3F096); /* Dégradé de couleur pour l'arrière-plan */
+}

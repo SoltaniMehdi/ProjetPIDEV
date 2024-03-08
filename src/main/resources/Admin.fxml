@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="592.0" prefWidth="804.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Admincontroller">
+    <children>
+        <!-- TableView -->
+        <TableView fx:id="tv_admin" layoutX="15.0" layoutY="31.0" prefHeight="295.0" prefWidth="597.0" style="-fx-background-color: white;">
+            <columns>
+                <!-- ID TableColumn -->
+                <TableColumn fx:id="id_utilisateur" minWidth="0.0" prefWidth="0.0" style="-fx-alignment: CENTER;" text="ID" />
+                <!-- Nom TableColumn -->
+                <TableColumn fx:id="nom_utilisateur" prefWidth="95.20001411437988" style="-fx-alignment: CENTER;" text="Nom" />
+                <!-- Prenom TableColumn -->
+                <TableColumn fx:id="prenom_utilisateur" prefWidth="96.7999496459961" style="-fx-alignment: CENTER;" text="Prenom" />
+                <!-- Numero TableColumn -->
+                <TableColumn fx:id="numero_utilisateur" prefWidth="113.60003662109375" style="-fx-alignment: CENTER;" text="Numero" />
+                <!-- Mail TableColumn -->
+                <TableColumn fx:id="mail_utilisateur" prefWidth="124.79998779296875" style="-fx-alignment: CENTER;" text="Mail" />
+                <!-- Password TableColumn -->
+                <TableColumn fx:id="password_utilisateur" prefWidth="81.5999755859375" style="-fx-alignment: CENTER;" text="Password" />
+                <!-- Role TableColumn -->
+                <TableColumn fx:id="role_utilisateur" prefWidth="81.5999755859375" style="-fx-alignment: CENTER;" text="Role" />
+            </columns>
+        </TableView>
+
+        <!-- Modifier/Supprimer Button -->
+        <Button layoutX="620.0" layoutY="143.0" mnemonicParsing="false" onAction="#modifiersupprimerUtilisateur" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;" text="Modifier" />
+
+        <!-- Supprimer Button -->
+        <Button layoutX="662.0" layoutY="202.0" mnemonicParsing="false" onAction="#AdminSupprimer" style="-fx-background-color: #F44336; -fx-text-fill: white; -fx-font-weight: bold;" text="Supprimer" />
+      <Button layoutX="117.0" layoutY="419.0" mnemonicParsing="false" onAction="#redcommandeadmin" prefHeight="42.0" prefWidth="159.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;" text="Commande" />
+      <Button layoutX="314.0" layoutY="419.0" mnemonicParsing="false" onAction="#redeventadmin" prefHeight="42.0" prefWidth="159.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;" text="Events" />
+    </children>
+</AnchorPane>

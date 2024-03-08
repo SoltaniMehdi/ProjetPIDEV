@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #8df66e;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddPController">
+    <children>
+        <!-- Titre "Ajouter Point de Distribution" avec une écriture en gras et couleur verte menthe -->
+        <Label layoutX="178.0" layoutY="14.0" text="Ajouter Point de Distribution" textFill="#1f201f"> <!-- Couleur verte menthe -->
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+
+        <!-- Champ "Nom" -->
+        <Label fx:id="ft_nom" layoutX="50.0" layoutY="130.0" text="Nom :" textFill="#171817"> <!-- Couleur verte menthe -->
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <TextField fx:id="nomTextField" layoutX="118.0" layoutY="130.0" promptText="Entrez le nom" />
+
+        <!-- Champ "Adresse" -->
+        <Label fx:id="ft_adresse" layoutX="50.0" layoutY="180.0" text="Adresse :" textFill="#1c1e1c"> <!-- Couleur verte menthe -->
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <TextField fx:id="adresseTextField" layoutX="118.0" layoutY="180.0" promptText="Entrez l'adresse" />
+
+        <!-- Bouton "Ajouter" -->
+        <Button layoutX="118.0" layoutY="288.0" mnemonicParsing="false" onAction="#handleAjouterButton" text="Ajouter">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Button>
+      <Button layoutX="242.0" layoutY="288.0" mnemonicParsing="false" onAction="#afficher" text="afficher">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="back" layoutX="366.0" layoutY="288.0" mnemonicParsing="false" onAction="#handleAnnulerButton" text="retour">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+    </children>
+</AnchorPane>

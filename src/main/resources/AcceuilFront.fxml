@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="961.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AcceuilFront">
+   <children>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#B3F096" height="600.0" layoutX="-22.0" stroke="#e89646" strokeType="INSIDE" width="961.0" />
+      <Label layoutX="283.0" layoutY="6.0" prefHeight="89.0" prefWidth="628.0" stylesheets="@Styless.css" text="La liste des repas">
+         <font>
+            <Font name="Segoe UI Semibold Italic" size="73.0" />
+         </font>
+      </Label>
+      <ListView fx:id="afficher_rep" layoutX="283.0" layoutY="99.0" prefHeight="475.0" prefWidth="628.0" stylesheets="@style.css" />
+      <ImageView fx:id="img" fitHeight="55.0" fitWidth="184.0" layoutX="50.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="175.0" fitWidth="224.0" layoutX="16.0" layoutY="399.0">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="rechercheField" layoutX="16.0" layoutY="99.0" prefHeight="40.0" prefWidth="184.0" promptText="RechercheField" stylesheets="@Styless.css" />
+      <Button layoutX="206.0" layoutY="103.0" mnemonicParsing="false" onAction="#OnSort" prefHeight="31.0" prefWidth="68.0" stylesheets="@Styless.css" text="Sort" />
+      <Button layoutX="16.0" layoutY="176.0" mnemonicParsing="false" onAction="#redevent" prefHeight="31.0" prefWidth="146.0" stylesheets="@Styless.css" text="Evenement" />
+      <Button layoutX="16.0" layoutY="228.0" mnemonicParsing="false" onAction="#redcatr" prefHeight="31.0" prefWidth="146.0" stylesheets="@Styless.css" text="Categories repas" />
+      <Button layoutX="836.0" layoutY="44.0" mnemonicParsing="false" onAction="#redprofil" prefHeight="31.0" prefWidth="88.0" stylesheets="@Styless.css" text="Profil" />
+      <Button layoutX="16.0" layoutY="284.0" mnemonicParsing="false" onAction="#redlivr" prefHeight="31.0" prefWidth="146.0" stylesheets="@Styless.css" text="Livraison" />
+   </children>
+</AnchorPane>
