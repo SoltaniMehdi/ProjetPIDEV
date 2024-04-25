@@ -1,0 +1,37 @@
+{% extends 'basefront.html.twig' %}
+
+{% block body %}
+    <h1>Commandes index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdCommande</th>
+                <th>Datec</th>
+                <th>Statut</th>
+                <th>Totalprix</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for commande in commandes %}
+            <tr>
+                <td>{{ commande.idCommande }}</td>
+                <td>{{ commande.datec ? commande.datec|date('Y-m-d') : '' }}</td>
+                <td>{{ commande.statut }}</td>
+                <td>{{ commande.totalprix }}</td>
+                <td>
+                    <a href="{{ path('app_commandes_show', {'idCommande': commande.idCommande}) }}">show</a>
+                    <a href="{{ path('app_commandes_edit', {'idCommande': commande.idCommande}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_commandes_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,37 @@
+<?php
+
+namespace App\Database;
+
+use Doctrine\DBAL\Connection as DBALConnection;
+use Doctrine\DBAL\ConnectionFactory;
+
+class DynamicConnection
+{
+    protected $params;
+    protected $connectionFactory;
+
+    public function __construct(array $params, ConnectionFactory $connectionFactory)
+    {
+        $this->params = $params;
+        $this->connectionFactory = $connectionFactory;
+    }
+
+    public function getConnection(): DBALConnection
+    {
+        // Create a new connection using the injected ConnectionFactory
+        return $this->connectionFactory->createConnection($this->params);
+    }
+
+    public function updateConnection(array $userDatabase): void
+    {
+        // Validate the required parameters
+        if (!isset($userDatabase['dbname']) || !isset($userDatabase['user']) || !isset($userDatabase['password'])) {
+            throw new \InvalidArgumentException('User database parameters are missing.');
+        }
+
+        // Update the connection parameters based on the user's database data
+        $this->params['dbname'] = $userDatabase['dbname'];
+        $this->params['user'] = $userDatabase['user'];
+        $this->params['password'] = $userDatabase['password'];
+    }
+}

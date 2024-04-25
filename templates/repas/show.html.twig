@@ -1,0 +1,32 @@
+{% extends 'basefront.html.twig' %}
+
+{% block body %}
+    <h1>Repas</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Idr</th>
+                <td>{{ repa.idr }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ repa.prix }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ repa.nom }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ repa.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_repas_index') }}">back to list</a>
+
+    <a href="{{ path('app_repas_edit', {'idr': repa.idr}) }}">edit</a>
+
+    {{ include('repas/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'basefront.html.twig' %}
+
+{% block body %}
+    <h1>Créer une nouvelle commande</h1>
+
+    <form action="{{ path('app_commandes_index') }}" method="post" id="commande-form">
+        {# Champ pour le nom de la commande #}
+        <div>
+            <label for="commande_nom">Nom de la commande :</label>
+            <input type="text" id="commande_nom" name="commande[nom]" required>
+        </div>
+
+        {# Champ pour la date de la commande #}
+        <div>
+            <label for="commande_date">Date de la commande :</label>
+            <input type="date" id="commande_date" name="commande[date]" required>
+        </div>
+
+        {# Champ pour le statut de la commande #}
+        <div>
+            <label for="commande_statut">Statut de la commande :</label>
+            <select id="commande_statut" name="commande[statut]" required>
+                <option value="En attente">En attente</option>
+                <option value="En cours">En cours</option>
+                <option value="Terminée">Terminée</option>
+            </select>
+        </div>
+
+        {# Bouton de soumission du formulaire #}
+        <button type="submit">Créer la commande</button>
+    </form>
+
+    <a href="{{ path('app_commandes_index') }}">Retour à la liste</a>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        document.getElementById('commande-form').addEventListener('submit', function(event) {
+            // Récupérer la date actuelle
+            var currentDate = new Date();
+            
+            // Récupérer la valeur du champ de date
+            var dateInput = document.getElementById('commande_date').value;
+            var selectedDate = new Date(dateInput);
+
+            // Vérifier si la date est dans le futur
+            if (selectedDate < currentDate) {
+                alert("La date de la commande doit être dans le futur.");
+                event.preventDefault(); // Empêcher l'envoi du formulaire
+                return;
+            }
+
+            // Vérifier si le statut de la commande est valide
+            var statutInput = document.getElementById('commande_statut').value;
+            var statutsValides = ["En attente", "En cours", "Terminée"];
+            if (!statutsValides.includes(statutInput)) {
+                alert("Le statut de la commande doit être 'En attente', 'En cours' ou 'Terminée'.");
+                event.preventDefault(); // Empêcher l'envoi du formulaire
+                return;
+            }
+        });
+    </script>
+{% endblock %}

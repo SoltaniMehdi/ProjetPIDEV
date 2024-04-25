@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with FoodHut landing page.">
+    <meta name="author" content="Devcrud">
+    <title>FoodHut | Free Bootstrap 4.3.x template</title>
+   
+    <!-- font icons -->
+    <link rel="stylesheet" href="{{ asset('asset/vendors/animate/animate.css') }}">
+
+   <link rel="stylesheet" href="{{ asset('asset/vendors/themify-icons/css/themify-icons.css') }}">
+
+    <!-- Bootstrap + FoodHut main styles -->
+	<link rel="stylesheet" href="{{asset('asset/css/foodhut.css')}}">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    
+    <!-- Navbar -->
+    {% block nav %}
+    <nav class="custom-navbar navbar navbar-expand-lg navbar-dark fixed-top" data-spy="affix" data-offset-top="10">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{path('display_front')}}">Acceuil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{path('app_repas')}}">Les repas</a>
+                </li>
+            </ul>
+            <a class="navbar-brand m-auto" href="#">
+                <img src="asset/imgs/logo.svg" class="brand-img" alt="">
+                <span class="brand-txt">VitaPlat</span>
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#testmonial">Avis</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="components.html" class="btn btn-primary ml-xl-4">Components</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    {% endblock %}
+    <!-- header -->
+
+    {% block body %}
+    <header id="home" class="header">
+        <div class="overlay text-white text-center">
+        <img src="asset\imgs\logo (2).png" alt="Your Logo" class="logo">
+            <h1 class="display-2 font-weight-bold my-3">VitaPlat</h1>
+            <h2 class="display-4 mb-5">Savourez la vie, plat après plat!</h2>
+            <a class="btn btn-lg btn-primary" href="#gallary">Découvrir nos plats</a>
+        </div>
+    </header>
+
+    <!--  gallary Section  -->
+    <div id="gallary" class="text-center bg-dark text-light has-height-md middle-items wow fadeIn">
+        <h2 class="section-title">NOS PLATS DISPONIBLES</h2>
+    </div>
+
+    <div class="gallary row">
+    <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn" prix="$12.99" nom="Pear Cake" description="old fashioned cake">
+        <img src="asset/imgs/gallary-1.jpg" alt="Pear Cake" class="gallary-img">
+        <!-- JavaScript onclick event to call the addMeal function and pass meal details -->
+        <a href="#" onclick="addMeal('Pear Cake', '12.99', 'Creamy pasta with bacon and cheese.')" class="gallary-overlay">
+            <i class="gallary-icon ti-plus addMealButton"></i>
+        </a>
+    </div>
+    <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn" prix="$12.99" nom="Açai bowl" description="acai mixed">
+            <img src="asset/imgs/gallary-2.jpg" alt="Açai bowl" class="gallary-img">
+            <a href="#" onclick="addMeal('Açai bowl', '12.99', 'acai mixed')" class="gallary-overlay">
+                 <i class="gallary-icon ti-plus addMealButton"></i>
+            </a>
+        </div>
+
+         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn" prix="$12.99" nom="charcuterie" description="old fashioned cake">
+            <img src="asset/imgs/gallary-3.jpg" alt="charcuterie" class="gallary-img">
+            <a href="#" onclick="addMeal('charcuterie', '12.99', 'acai mixed')" class="gallary-overlay">
+                 <i class="gallary-icon ti-plus addMealButton"></i>
+            </a>
+        </div>
+         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn" prix="$12.99" nom="salade" description="old fashioned cake">
+            <img src="asset/imgs/gallary-4.jpg" alt="salade" class="gallary-img">
+            <a href="#" onclick="addMeal('salade', '12.99', 'acai mixed')" class="gallary-overlay">
+                 <i class="gallary-icon ti-plus addMealButton"></i>
+            </a>
+        </div>
+        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="asset/imgs/gallary-5.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img">
+            <a href="{{ path('add_meal', {'nom': 'berries bowl','prix':'120','description':'bonnnn' }) }}"  class="gallary-overlay">
+                 <i class="gallary-icon ti-plus addMealButton"></i>
+            </a>
+        </div>
+         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="asset/imgs/gallary-6.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img">
+            <a href="{{ path('add_meal', {'nom': 'mexican burger','prix':'120','description':'bonnnn' }) }}"  class="gallary-overlay">
+                <i class="gallary-icon ti-plus addMealButton"></i>
+            </a>
+        </div>
+        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="asset/imgs/gallary-7.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img">
+            <a href="{{ path('add_meal', {'nom': 'Toast egg et avocat','prix':'120','description':'bonnnn' }) }}"  class="gallary-overlay">
+                 <i class="gallary-icon ti-plus addMealButton"></i>
+            </a>
+        </div>
+        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="asset/imgs/gallary-8.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img">
+            <a href="{{ path('add_meal', {'nom': 'Biscuits','prix':'120','description':'bonnnn' }) }}"  class="gallary-overlay">
+                <i class="gallary-icon ti-plus addMealButton"></i>
+            </a>
+        </div>
+         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="asset/imgs/gallary-9.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img">
+            <a href="{{ path('add_meal', {'nom': 'pancakes','prix':'30','description':'pancakes au miel' }) }}"  class="gallary-overlay">
+                 <i class="gallary-icon ti-plus addMealButton"></i>
+            </a>
+        </div>
+
+
+        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="asset/imgs/gallary-10.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img">
+            <a href="{{ path('add_meal', {'nom': 'salade mangue','prix':'120','description':'bonnnn' }) }}"  class="gallary-overlay">
+                <i class="gallary-icon ti-plus addMealButton"></i>
+            </a>
+        </div>
+
+        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="asset/imgs/gallary-11.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img">
+            <a href="{{ path('add_meal', {'Açaibowl': 'pizza','prix':'120','description':'avecfruitsrouges' }) }}"  class="gallary-overlay">
+                 <i class="gallary-icon ti-plus addMealButton"></i>
+            </a>
+        </div>
+        
+        <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
+            <img src="asset/imgs/gallary-12.jpg" alt="template by DevCRID http://www.devcrud.com/" class="gallary-img">
+            <a href="{{ path('add_meal', {'nom': 'Salade','prix':'120','description':'Saladequalité' }) }}"  class="gallary-overlay">
+                 <i class="gallary-icon ti-plus addMealButton"></i>
+            </a>
+        </div>
+
+
+</div>
+
+        
+
+
+       
+
+
+   <!-- Panier section -->
+<div class="container-fluid has-bg-overlay text-center text-light has-height-lg middle-items" id="book-table">
+    <div>
+        <h2 class="section-title mb-5">VOTRE PANIER</h2>
+        <div class="row mb-5" id="meal-list">
+            <div class="col-md-12">
+                <ul class="list-group" id="meal-list-items">
+                    <!-- Meal items will be dynamically added here -->
+                </ul>
+            </div>
+        </div>
+        <button type="button" class="btn btn-lg btn-primary" onclick="vider()" id="clear-meal-btn">Vider</button>
+        <button type="button" class="btn btn-lg btn-primary" onclick="addMealToCommandeRepas()" id="dd-meal-btn">Confirmer</button>
+    </div>
+</div>
+
+
+    <!-- BLOG Section  -->
+    <div id="blog" class="container-fluid bg-dark text-light py-5 text-center wow fadeIn">
+        <h2 class="section-title py-5">EVENTS AT THE VitaPlat</h2>
+        <div class="row justify-content-center">
+            <div class="col-sm-7 col-md-4 mb-5">
+                <ul class="nav nav-pills nav-justified mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#foods" role="tab" aria-controls="pills-home" aria-selected="true">Foods</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#juices" role="tab" aria-controls="pills-profile" aria-selected="false">Juices</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="foods" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card bg-transparent border my-3 my-md-0">
+                            <img src="asset/imgs/blog-1.jpg" alt="template by DevCRID http://www.devcrud.com/" class="rounded-0 card-img-top mg-responsive">
+                            <div class="card-body">
+                                <h1 class="text-center mb-4"><a href="#" class="badge badge-primary">$5</a></h1>
+                                <h4 class="pt20 pb20">Reiciendis Laborum </h4>
+                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa provident illum officiis fugit laudantium voluptatem sit iste delectus qui ex. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-transparent border my-3 my-md-0">
+                            <img src="asset/imgs/blog-2.jpg" alt="template by DevCRID http://www.devcrud.com/" class="rounded-0 card-img-top mg-responsive">
+                            <div class="card-body">
+                                <h1 class="text-center mb-4"><a href="#" class="badge badge-primary">$12</a></h1>
+                                <h4 class="pt20 pb20">Adipisci Totam</h4>
+                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa provident illum officiis fugit laudantium voluptatem sit iste delectus qui ex. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-transparent border my-3 my-md-0">
+                            <img src="asset/imgs/blog-3.jpg" alt="template by DevCRID http://www.devcrud.com/" class="rounded-0 card-img-top mg-responsive">
+                            <div class="card-body">
+                                <h1 class="text-center mb-4"><a href="#" class="badge badge-primary">$8</a></h1>
+                                <h4 class="pt20 pb20">Dicta Deserunt</h4>
+                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa provident illum officiis fugit laudantium voluptatem sit iste delectus qui ex. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="juices" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="row">
+                    <div class="col-md-4 my-3 my-md-0">
+                        <div class="card bg-transparent border">
+                            <img src="asset/imgs/blog-4.jpg" alt="template by DevCRID http://www.devcrud.com/" class="rounded-0 card-img-top mg-responsive">
+                            <div class="card-body">
+                                <h1 class="text-center mb-4"><a href="#" class="badge badge-primary">$15</a></h1>
+                                <h4 class="pt20 pb20">Consectetur Adipisicing Elit</h4>
+                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa provident illum officiis fugit laudantium voluptatem sit iste delectus qui ex. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 my-3 my-md-0">
+                        <div class="card bg-transparent border">
+                            <img src="asset/imgs/blog-5.jpg" alt="template by DevCRID http://www.devcrud.com/" class="rounded-0 card-img-top mg-responsive">
+                            <div class="card-body">
+                                <h1 class="text-center mb-4"><a href="#" class="badge badge-primary">$29</a></h1>
+                                <h4 class="pt20 pb20">Ullam Laboriosam</h4>
+                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa provident illum officiis fugit laudantium voluptatem sit iste delectus qui ex. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 my-3 my-md-0">
+                        <div class="card bg-transparent border">
+                            <img src="asset/imgs/blog-6.jpg" alt="template by DevCRID http://www.devcrud.com/" class="rounded-0 card-img-top mg-responsive">
+                            <div class="card-body">
+                                <h1 class="text-center mb-4"><a href="#" class="badge badge-primary">$3</a></h1>
+                                <h4 class="pt20 pb20">Fugit Ipsam</h4>
+                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa provident illum officiis fugit laudantium voluptatem sit iste delectus qui ex. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- REVIEWS Section  -->
+    <div id="testmonial" class="container-fluid wow fadeIn bg-dark text-light has-height-lg middle-items">
+        <h2 class="section-title my-5 text-center">REVIEWS</h2>
+        <div class="row mt-3 mb-5">
+            <div class="col-md-4 my-3 my-md-0">
+                <div class="testmonial-card">
+                    <h3 class="testmonial-title">John Doe</h3>
+                    <h6 class="testmonial-subtitle">Web Designer</h6>
+                    <div class="testmonial-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum nobis eligendi, quaerat accusamus ipsum sequi dignissimos consequuntur blanditiis natus. Aperiam!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 my-3 my-md-0">
+                <div class="testmonial-card">
+                    <h3 class="testmonial-title">Steve Thomas</h3>
+                    <h6 class="testmonial-subtitle">UX/UI Designer</h6>
+                    <div class="testmonial-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum minus obcaecati cum eligendi perferendis magni dolorum ipsum magnam, sunt reiciendis natus. Aperiam!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 my-3 my-md-0">
+                <div class="testmonial-card">
+                    <h3 class="testmonial-title">Miranda Joy</h3>
+                    <h6 class="testmonial-subtitle">Graphic Designer</h6>
+                    <div class="testmonial-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, nam. Earum nobis eligendi, dignissimos consequuntur blanditiis natus. Aperiam!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT Section  -->
+    <div id="contact" class="container-fluid bg-dark text-light border-top wow fadeIn">
+        <div class="row">
+            <div class="col-md-6 px-0">
+                <div id="map" style="width: 100%; height: 100%; min-height: 400px"></div>
+            </div>
+            <div class="col-md-6 px-5 has-height-lg middle-items">
+                <h3>FIND US</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, laboriosam doloremque odio delectus, sunt magnam laborum impedit molestiae, magni quae ipsum, ullam eos! Alias suscipit impedit et, adipisci illo quam.</p>
+                <div class="text-muted">
+                    <p><span class="ti-location-pin pr-3"></span> 12345 Fake ST NoWhere, AB Country</p>
+                    <p><span class="ti-support pr-3"></span> (123) 456-7890</p>
+                    <p><span class="ti-email pr-3"></span>info@website.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+
+    <!-- page footer  -->
+    <div class="container-fluid bg-dark text-light has-height-md middle-items border-top text-center wow fadeIn">
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>EMAIL US</h3>
+                <P class="text-muted">info@website.com</P>
+            </div>
+            <div class="col-sm-4">
+                <h3>CALL US</h3>
+                <P class="text-muted">(123) 456-7890</P>
+            </div>
+            <div class="col-sm-4">
+                <h3>FIND US</h3>
+                <P class="text-muted">12345 Fake ST NoWhere AB Country</P>
+            </div>
+        </div>
+    </div>
+    <div class="bg-dark text-light text-center border-top wow fadeIn">
+        <p class="mb-0 py-3 text-muted small">&copy; Copyright <script>document.write(new Date().getFullYear())</script> Made with <i class="ti-heart text-danger"></i> By <a href="http://devcrud.com">DevCRUD</a></p>
+    </div>
+        {% endblock %}
+
+        {% block javascripts %}
+             <script src="asset/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="asset/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap affix -->
+    <script src="asset/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- wow.js -->
+    <script src="asset/vendors/wow/wow.js"></script>
+    
+    <!-- google maps -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap"></script>
+
+    <!-- FoodHut js -->
+    <script src="asset/js/foodhut.js"></script>
+    </script>
+
+    <script>
+    $(document).ready( function() { 
+       $.ajax({
+        url: 'repas/api/init', // Replace this with the actual route path
+        method: 'GET', // Change this to 'POST' if needed
+    
+    });
+    });
+
+
+
+   function addMeal(nom, prix, description) {
+    // AJAX request to add meal to the database
+    $.ajax({
+        url: 'repas/api/addMeal', // Replace this with the actual route path
+        method: 'GET', // Change this to 'POST' if needed
+        data: { nom: nom, prix: prix, description: description },
+        success: function(response) {
+            // Display success message if needed
+            console.log(response);
+            // Dynamically add the meal to the cart list on the page
+            const newItem = document.createElement('li');
+            newItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+            newItem.innerHTML = `
+                ${nom}
+                <span class="badge badge-primary badge-pill">1</span>
+            `;
+            $('#meal-list').append(newItem);
+        },
+        error: function(xhr, status, error) {
+            // Handle error if needed
+            console.error(xhr.responseText);
+        }
+    });
+}
+
+
+// JavaScript function to handle adding the meal to commandes_repas table
+function addMealToCommandeRepas() {
+    // Make an AJAX request to the Symfony controller endpoint
+    $.ajax({
+        url: 'repas/api/addMealToCommandeRepas',
+        type: 'POST',
+        data: {
+            // Pass any necessary data (e.g., meal ID, command ID) to the controller
+        },
+        success: function(response) {
+            // Handle successful response
+            alert('Meal added to command successfully!');
+            // Redirect to the /stripe page
+            window.location.href = "http://127.0.0.1:8000/stripe";
+        },
+        error: function(xhr, status, error) {
+            // Handle error (e.g., show an error message)
+            console.error(error);
+            alert('Failed to add meal to command. Please try again later.');
+        }
+    });
+}
+
+
+
+
+function vider() {
+ $('#meal-list li').remove();
+ $.ajax({
+        url: 'repas/api/init', // Replace this with the actual route path
+        method: 'GET', // Change this to 'POST' if needed
+    
+    });
+}
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
+        {% endblock %}
+    </head>
+    <body>
+    </body>
+</html>

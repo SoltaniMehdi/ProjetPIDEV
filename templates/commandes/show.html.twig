@@ -1,0 +1,33 @@
+
+{% extends 'basefront.html.twig' %}
+{% block body %}
+<title>Commandes</title>
+    <h1>Commandes</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdCommande</th>
+                <td>{{ commande.idCommande }}</td>
+            </tr>
+            <tr>
+                <th>Datec</th>
+                <td>{{ commande.datec ? commande.datec|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td>{{ commande.statut }}</td>
+            </tr>
+            <tr>
+                <th>Totalprix</th>
+                <td>{{ commande.totalprix }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_commandes_index') }}">back to list</a>
+
+    <a href="{{ path('app_commandes_edit', {'idCommande': commande.idCommande}) }}">edit</a>
+
+    {{ include('commandes/_delete_form.html.twig') }}
+{% endblock %}
