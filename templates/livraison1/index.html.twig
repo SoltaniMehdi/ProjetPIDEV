@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Livraison1 index{% endblock %}
+
+{% block body %}
+    <h1>Livraison1 index</h1>
+
+    <!-- Liens de tri -->
+    <div class="mb-3">
+       
+        <a href="#" onclick="sortTable(3)">Trier par DateLivraison</a>
+        <a href="#" onclick="sortTable(4)">Trier par Adresse</a>
+        <a href="#" onclick="sortTable(5)">Trier par Prix</a>
+    </div>
+
+    <!-- Champ de recherche -->
+    <input type="text" id="searchInput" placeholder="Rechercher...">
+
+    <!-- Tableau des livraisons -->
+    <table class="table" id="livraison-table">
+        <thead>
+            <tr>
+                <th>IdLivraison</th>
+               
+                <th>DateLivraison</th>
+                <th>Adresse</th>
+                <th>Prix</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for livraison1 in livraison1s %}
+            <tr>
+                <td>{{ livraison1.idLivraison }}</td>
+               
+                <td>{{ livraison1.dateLivraison }}</td>
+                <td>{{ livraison1.adresse }}</td>
+                <td>{{ livraison1.prix }}</td>
+                <td>
+                    <a href="{{ path('app_livraison1_show', {'idLivraison': livraison1.idLivraison}) }}">Afficher</a>
+                    <a href="{{ path('app_livraison1_edit', {'idLivraison': livraison1.idLivraison}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">Aucun enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+ <!-- Bouton pour accéder aux statistiques -->
+    <a href="{{ path('livraison1_statistics') }}" class="btn btn-primary">Voir les statistiques des livraisons par adresse</a>
+
+    <!-- Bouton pour télécharger le PDF -->
+    <a href="{{ path('generate_pdf') }}" class="btn btn-primary" onclick="alert('Le téléchargement du PDF a été lancé.');">Télécharger PDF</a>
+{% for flash_message in app.flashes('success') %}
+    <div class="alert alert-success" role="alert">
+        {{ flash_message }}
+    </div>
+{% endfor %}
+    <!-- Bouton pour créer un nouveau enregistrement -->
+    <a href="{{ path('app_livraison1_new') }}" class="btn btn-success">Créer un nouveau</a>
+
+    <!-- Script JavaScript pour trier le tableau -->
+    <script>
+        function sortTable(columnIndex) {
+            var table, rows, switching, i, x, y, shouldSwitch;
+            table = document.getElementById("livraison-table");
+            switching = true;
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("td")[columnIndex];
+                    y = rows[i + 1].getElementsByTagName("td")[columnIndex];
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch= true;
+                        break;
+                    }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                }
+            }
+        }
+    </script>
+
+    <!-- Script JavaScript pour la recherche en temps réel -->
+    <script>
+        $(document).ready(function() {
+            $("#searchInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#livraison-table tbody tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+    
+{% endblock %}

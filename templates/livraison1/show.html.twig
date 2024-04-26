@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Livraison1{% endblock %}
+
+{% block body %}
+    <h1>Livraison1</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdLivraison</th>
+                <td>{{ livraison1.idLivraison }}</td>
+            </tr>
+            <tr>
+                <th>IdCommande</th>
+                <td>{{ livraison1.idCommande }}</td>
+            </tr>
+            <tr>
+                <th>IdClient</th>
+                <td>{{ livraison1.idClient }}</td>
+            </tr>
+            <tr>
+                <th>DateLivraison</th>
+                <td>{{ livraison1.dateLivraison }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ livraison1.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ livraison1.prix }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_livraison1_index') }}">back to list</a>
+
+    <a href="{{ path('app_livraison1_edit', {'idLivraison': livraison1.idLivraison}) }}">edit</a>
+<a href="{{ path('generate_pdf') }}" class="btn btn-primary" onclick="alert('Le téléchargement du PDF a été lancé.');">Télécharger PDF</a>
+
+    {{ include('livraison1/_delete_form.html.twig') }}
+
+{% endblock %}

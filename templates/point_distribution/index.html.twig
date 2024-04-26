@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PointDistribution index{% endblock %}
+
+{% block body %}
+    <h1>PointDistribution index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdPointDistribution</th>
+                <th>Nom</th>
+                <th>Adresse</th>
+                <th>IdLivraison</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for point_distribution in point_distributions %}
+            <tr>
+                <td>{{ point_distribution.idPointDistribution }}</td>
+                <td>{{ point_distribution.nom }}</td>
+                <td>{{ point_distribution.adresse }}</td>
+                <td>{{ point_distribution.idLivraison }}</td>
+                <td>
+                    <a href="{{ path('app_point_distribution_show', {'idPointDistribution': point_distribution.idPointDistribution}) }}">show</a>
+                    <a href="{{ path('app_point_distribution_edit', {'idPointDistribution': point_distribution.idPointDistribution}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_point_distribution_new') }}">Create new</a>
+{% endblock %}

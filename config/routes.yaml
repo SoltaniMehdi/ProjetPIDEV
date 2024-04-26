@@ -1,3 +1,11 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+app_livraison1_show:
+    path: '/livraison1/{idLivraison}'
+    controller: 'App\Controller\Livraison1Controller::show'
+    methods: ['GET']
+generate_pdf:
+    path: /livraison1/generate-pdf
+    controller: 'App\Controller\Livraison1Controller::generatePdf'
+    methods: ['GET']

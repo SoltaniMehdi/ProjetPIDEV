@@ -6,14 +6,223 @@
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
+            <!DOCTYPE html>
+             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script> <!-- Ajoutez vos propres scripts JavaScript -->
+  
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with FoodHut landing page.">
+    <meta name="author" content="Devcrud">
+    <title>FoodHut | Free Bootstrap 4.3.x template</title>
+   
+    <!-- font icons -->
+    <link rel="stylesheet" href="{{ asset('asset/vendors/animate/animate.css') }}">
+
+   <link rel="stylesheet" href="{{ asset('asset/vendors/themify-icons/css/themify-icons.css') }}">
+
+    <!-- Bootstrap + FoodHut main styles -->
+    <link rel="stylesheet" href="{{asset('asset/css/foodhut.css')}}">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    
+    <!-- Navbar -->
+    {% block nav %}
+    
+
+    {% endblock %}
+    <!-- header -->
+
+    {% block body %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <nav class="custom-navbar navbar navbar-expand-lg navbar-dark fixed-top" data-spy="affix" data-offset-top="10">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{path('app_livraison1_index')}}">livraison</a>
+                </li>
+                <li class="nav-item">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{path('app_point_distribution_index')}}">point distribution</a>
+                    
+                </li>
+            </ul>
+            <a class="navbar-brand m-auto" href="#">
+                <img src="asset/imgs/logo.svg" class="brand-img" alt="">
+                <span class="brand-txt">VitaPlat</span>
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#blog">Blog<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#testmonial">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="components.html" class="btn btn-primary ml-xl-4">Components</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <header id="home" class="header">
+        <div class="overlay text-white text-center">
+        <img src="asset\imgs\logo (2).png" alt="Your Logo" class="logo">
+            <h1 class="display-2 font-weight-bold my-3">VitaPlat</h1>
+            <h2 class="display-4 mb-5">Savourez la vie, plat après plat!</h2>
+            <a class="btn btn-lg btn-primary" href="#gallary">Découvrir nos plats</a>
+        </div>
+    </header>
+
+    
+
+    <div class="gallary row">
+    
+    
+
+
+
+   
+   
+    {% endblock %}
+
+   
         {% endblock %}
 
         {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
+             <script src="asset/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="asset/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap affix -->
+    <script src="asset/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- wow.js -->
+    <script src="asset/vendors/wow/wow.js"></script>
+    
+    <!-- google maps -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap"></script>
+
+    <!-- FoodHut js -->
+    <script src="asset/js/foodhut.js"></script>
+    </script>
+
+    <script>
+    function addMeal(nom, prix, description) {
+        // AJAX request to add meal to the database
+        $.ajax({
+            method: 'GET', // Change this to 'POST' if needed
+            data: { nom: nom, prix: prix, description: description },
+            success: function(response) {
+                // Display success message if needed
+                console.log(response);
+                // Dynamically add the meal to the cart list on the page
+                const newItem = document.createElement('li');
+                newItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+                newItem.innerHTML = `
+                    ${nom}
+                    <span class="badge badge-primary badge-pill">1</span>
+                `;
+                $('#meal-list').append(newItem);
+            },
+            error: function(xhr, status, error) {
+                // Handle error if needed
+                console.error(xhr.responseText);
+            }
+        });
+    }
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+    // Find the "Confirmer" button by its id
+    var confirmButton = document.getElementById("add-meal-btn");
+
+    // Add a click event listener to the "Confirmer" button
+    confirmButton.addEventListener("click", function() {
+        // Call a function to handle the button click event
+        handleConfirmButtonClick();
+    });
+});
+
+// Function to handle the button click event
+function handleConfirmButtonClick() {
+    // Perform any actions you want when the button is clicked
+    // For example, you can send an AJAX request to your server to add the command to the database
+    // Replace the placeholder URL with the actual endpoint where you handle the request
+    var url = "http://example.com/add_command"; // Replace with your actual endpoint
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Request was successful
+            console.log("Commande added successfully");
+            // Optionally, you can redirect the user to a confirmation page or perform other actions
+        } else if (xhr.readyState === 4 && xhr.status !== 200) {
+            // Request failed
+            console.error("Failed to add commande");
+            // Optionally, you can display an error message to the user
+        }
+    };
+    // Prepare the data to send in the request body (if needed)
+    var data = {}; // Add your data here if needed
+    xhr.send(JSON.stringify(data));
+}
+
+
+    
+</script>
+
+
+</body>
+
+
+<style>
+        /* Ajoutez vos styles personnalisés ici */
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .navbar-brand:hover {
+            transform: scale(1.1);
+        }
+    </style>
+
+
+
+
+</html>
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
     </body>
 </html>
+
+
+

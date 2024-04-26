@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PointDistribution{% endblock %}
+
+{% block body %}
+    <h1>PointDistribution</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdPointDistribution</th>
+                <td>{{ point_distribution.idPointDistribution }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ point_distribution.nom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ point_distribution.adresse }}</td>
+            </tr>
+            <tr>
+                <th>IdLivraison</th>
+                <td>{{ point_distribution.idLivraison }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_point_distribution_index') }}">back to list</a>
+
+    <a href="{{ path('app_point_distribution_edit', {'idPointDistribution': point_distribution.idPointDistribution}) }}">edit</a>
+
+    {{ include('point_distribution/_delete_form.html.twig') }}
+{% endblock %}
