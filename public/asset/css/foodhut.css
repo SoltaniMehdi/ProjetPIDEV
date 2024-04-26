@@ -11383,3 +11383,8 @@ pre {
   visibility: visible;
   opacity: 1;
 }
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fc;
+  padding-top: 70px; /* Increase the padding to push the content down */
+}

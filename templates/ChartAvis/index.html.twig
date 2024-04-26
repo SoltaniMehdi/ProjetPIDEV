@@ -1,0 +1,101 @@
+{% extends 'basefront.html.twig' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiques des avis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fc;
+            padding-top: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        #avisChart {
+            width: 100%;
+            height: 400px;
+            margin-top: 50px; /* Add margin to the top */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Statistiques des avis</h1>
+        <div id="avisChart"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var avisData = {{ avisCount|json_encode|raw }};
+            var chartData = [];
+            for (var note in avisData) {
+                if (avisData.hasOwnProperty(note)) {
+                    chartData.push({
+                        x: note,
+                        y: avisData[note]
+                    });
+                }
+            }
+            var options = {
+                chart: {
+                    type: 'bar',
+                    height: 400,
+                    background: '#f8f9fc',
+                    foreColor: '#333'
+                },
+                plotOptions: {
+                    bar: {
+                        horizontal: false,
+                        columnWidth: '50%',
+                        endingShape: 'rounded'
+                    }
+                },
+                dataLabels: {
+                    enabled: false
+                },
+                series: [{
+                    name: 'Nombre d\'avis',
+                    data: chartData
+                }],
+                xaxis: {
+                    type: 'category',
+                    labels: {
+                        formatter: function(val) {
+                            return val;
+                        }
+                    }
+                },
+                yaxis: {
+                    title: {
+                        text: 'Nombre d\'avis',
+                        style: {
+                            color: '#333'
+                        }
+                    },
+                    labels: {
+                        style: {
+                            colors: '#333'
+                        }
+                    }
+                },
+                colors: ['#00FF00', '#80FF80', '#C0FFC0']
+            };
+
+            var chart = new ApexCharts(document.querySelector("#avisChart"), options);
+            chart.render();
+        });
+    </script>
+</body>
+</html>
+{% endblock %}

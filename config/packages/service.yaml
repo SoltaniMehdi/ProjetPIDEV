@@ -2,3 +2,4 @@
 services:
     App\Service\UserDatabaseService:
         arguments: ['@App\Repository\UserRepository']
+        

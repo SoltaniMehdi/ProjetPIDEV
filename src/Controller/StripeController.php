@@ -10,6 +10,7 @@ use Stripe;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 
+
 class StripeController extends AbstractController
 {
     #[Route('/stripe', name: 'app_stripe')]
