@@ -1,0 +1,34 @@
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+<div class="form-group{% if form_errors(form.nom)|length > 0 %} has-error{% endif %}">
+    {{ form_row(form.nom, {'attr': {'class': 'form-control'}}) }}
+    {% if form_errors(form.nom)|length > 0 %}
+        <span class="help-block">{{ form_errors(form.nom)|first }}</span>
+    {% endif %}
+</div>
+
+<div class="form-group{% if form_errors(form.description)|length > 0 %} has-error{% endif %}">
+    {{ form_row(form.description, {'attr': {'class': 'form-control'}}) }}
+    {% if form_errors(form.description)|length > 0 %}
+        <span class="help-block">{{ form_errors(form.description)|first }}</span>
+    {% endif %}
+</div>
+
+<div class="form-group{% if form_errors(form.dated)|length > 0 %} has-error{% endif %}">
+    {{ form_row(form.dated, {'attr': {'class': 'form-control'}}) }}
+    {% if form_errors(form.dated)|length > 0 %}
+        <span class="help-block">{{ form_errors(form.dated)|first }}</span>
+    {% endif %}
+</div>
+
+
+<div class="form-group{% if form_errors(form.lieu)|length > 0 %} has-error{% endif %}">
+    {{ form_row(form.lieu, {'attr': {'class': 'form-control'}}) }}
+    {% if form_errors(form.lieu)|length > 0 %}
+        <span class="help-block">{{ form_errors(form.lieu)|first }}</span>
+    {% endif %}
+</div>
+
+{# Other form fields... #}
+
+<button type="submit" class="btn btn-primary">Submit</button>
+{{ form_end(form) }}

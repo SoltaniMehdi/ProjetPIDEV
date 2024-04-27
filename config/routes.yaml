@@ -1,0 +1,7 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+# Example route definition in Symfony routes.yaml
+webpush_subscribe:
+    path: '/webpush'
+    controller: 'App\Controller\WebPushController::subscribeAction'

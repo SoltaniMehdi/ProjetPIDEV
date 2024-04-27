@@ -1,0 +1,54 @@
+{% extends 'baseback.html.twig' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Chart</title>
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="eventChart" width="400" height="400"></canvas>
+    <script>
+        // Get chart data from PHP passed by Symfony
+        const chartData = {{ chartData|json_encode|raw }};
+
+        // Get the canvas element
+        const ctx = document.getElementById('eventChart').getContext('2d');
+
+        // Create the chart
+        const eventChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: Object.keys(chartData), // Grand Tunis and Other States
+                datasets: [{
+                    label: 'Number of Events',
+                    data: Object.values(chartData), // Count of events in Grand Tunis and Other States
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)', // Red color for Grand Tunis
+                        'rgba(54, 162, 235, 0.2)', // Blue color for Other States
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+  {% endblock %}
