@@ -1,0 +1,60 @@
+
+{% extends 'baseback.html.twig' %}
+
+
+{% block title %}Evenement index{% endblock %}
+
+{% block body %}
+    <h1>Evenement index</h1>
+    
+<div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Lieu</th>
+                <th>Dated</th>
+                <th>categorie</th>
+                <th>QR code</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for evenement in evenements %}
+            <tr>
+                <td>{{ evenement.id }}</td>
+                <td>{{ evenement.nom }}</td>
+                <td>{{ evenement.description }}</td>
+                <td>{{ evenement.lieu }}</td>
+                <td>{{ evenement.dated ? evenement.dated|date('Y-m-d') : '' }}</td>
+                <td>{{ evenement.idCateg.categevent }}</td>
+               <td class="qr-code-cell">
+                            <img src="{{ evenement.qrCode }}" alt="QR Code" calss="qr-code-cell" />
+                </td>
+                <td>
+                    <form method="POST" action="{{ path('delete_evenement', {'id': evenement.id}) }}" onsubmit="return confirm('Are you sure you want to delete this event?');">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                    <a href="{{ path('app_evenement_show', {'id': evenement.id}) }}">
+                    <button class="btn btn-success"> Show </button>
+                    </a>
+                    <a href="{{ path('app_evenement_edit', {'id': evenement.id}) }}">
+                        <button class="btn btn-secondary"> Edit </button>
+                    </a>
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">No records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}
