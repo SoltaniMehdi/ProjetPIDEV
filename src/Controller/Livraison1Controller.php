@@ -7,10 +7,7 @@ use App\Entity\Livraison1;
 use App\Form\Livraison1Type;
 use App\Repository\livraison1Repository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+
 
 #[Route('/livraison1')]
 class Livraison1Controller extends AbstractController
